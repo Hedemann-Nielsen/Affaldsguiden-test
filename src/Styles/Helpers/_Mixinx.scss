@@ -3,35 +3,49 @@
 
 @mixin title {
 	font-size: 36px;
-	font-weight: 700;
+	font-weight: 400;
 	text-transform: capitalize;
 	font-family: "Open Sans", sans-serif;
-	color: $color-darkgrey;
+	color: $color-deepGreen;
 }
 
-@mixin subtitle {
+@mixin subtitle2 {
 	font-size: 28px;
 	text-transform: capitalize;
 	font-family: "Open Sans", sans-serif;
-	color: $color-darkgrey;
-	font-weight: 700;
+	color: $color-deepGreen;
+	font-weight: 400;
+}
+
+@mixin subtitle3 {
+	font-size: 24px;
+	text-transform: capitalize;
+	font-family: "Open Sans", sans-serif;
+	color: $color-deepGreen;
+	font-weight: 400;
+}
+@mixin subtitle4 {
+	font-size: 20px;
+	text-transform: capitalize;
+	font-family: "Open Sans", sans-serif;
+	color: $color-deepGreen;
+	font-weight: 400;
 }
 
 @mixin text {
-	font-size: 18px;
+	font-size: 16px;
 	font-family: "Open Sans", sans-serif;
-
-	color: $color-darkgrey;
+	color: $color-deepGreen;
 }
 
 //fjerne alt styling fra en knap
-@mixin unbuttonize {
+@mixin unstyledButton {
 	background-color: transparent;
 	border: none;
 	margin: 0;
 	padding: 0;
 	text-align: inherit;
-	font: inherit;
+	font-family: "Open Sans", sans-serif;
 	border-radius: 0;
 	appearance: none;
 }

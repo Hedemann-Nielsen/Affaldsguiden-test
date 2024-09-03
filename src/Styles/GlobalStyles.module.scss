@@ -27,8 +27,8 @@ body {
 
 footer {
 	width: 100%;
-	height: 326px;
-	background-color: $color-darkgrey;
+	// height: 630, 7px;
+	background-color: #ffffff;
 }
 
 // sikre at både html, body, input felter osv har den korrekte skrift type
@@ -46,20 +46,18 @@ ol {
 	font-family: "Open Sans", sans-serif;
 }
 
-//klassisk global styling til knapper
-button {
-	font-size: 1rem;
-	cursor: pointer;
-	background-color: transparent; /* optional, depending on your design */
-	border: none; /* optional, depending on your design */
-}
-
 .title {
 	@include title;
 }
 
-.subtitle {
-	@include subtitle;
+.subtitle2 {
+	@include subtitle2;
+}
+.subtitle3 {
+	@include subtitle3;
+}
+.subtitle4 {
+	@include subtitle4;
 }
 
 .text {
@@ -87,60 +85,81 @@ button {
 
 //Standard knap styling til dette projekt.
 .styledButton {
-	height: 2.438rem;
-	padding: 7px 57px;
+	height: 39px;
+	padding: 7px;
+	gap: 10px;
 	border-radius: 4px;
-	font-family: "Open Sans", sans-serif;
-	font-size: 1.125rem;
-	color: $color-background;
-	background-color: $color-bluegrey;
-	border: transparent;
-	margin-top: 12px;
-
+	background-color: $color-forrestGreen;
+	box-shadow: 0px 2px 2px 0px #00000040;
 	&:hover {
 		animation-timing-function: ease-out;
 		animation-duration: 300ms;
-		background: $color-darkgrey;
+		background: $color-deepGreen;
 	}
 }
 
-.goldButton {
-	padding: 7px 20px;
-	border-radius: 4px;
-	border-color: transparent;
+.input {
+	height: 48px;
+	padding: 13px;
+	border-radius: 5px;
+	border: 1px solid $color-lightGreen;
 	font-family: "Open Sans", sans-serif;
-	font-size: 20px;
-	color: $color-lightgray;
-	background-color: $color-yellow;
-	text-decoration: none;
-	&:hover {
-		animation-timing-function: ease-out;
-		animation-duration: 300ms;
-		background: $color-darkgrey;
+	font-size: 16px;
+	font-weight: 300;
+	// line-height: 21.79px;
+
+	&:active {
+		border: 1px solid $color-deepGreen !important;
 	}
 }
 
 .unstyledButton {
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+	@include unstyledButton;
+}
+
+.iconContainer {
+	width: 128px;
+	height: 128px;
+	top: 20px;
+	left: 20px;
+	padding: 10px 21px 31.32px 21px;
+	border-radius: 8px;
+	background: #ffffff;
+	box-shadow: 0px 2px 8px 0px #00000040;
+	&:hover {
+		background-color: $color-lightGreen;
+	}
+	&:active {
+		background-color: $color-mossGreen !important;
+	}
 }
 
 .pageWrapper {
 	height: 100%;
-	margin: 0 127px 50px 127px;
+	// margin: 0 127px 50px 127px;
 
-	h1 {
-		@include title;
-		text-align: left;
-		margin-top: 19px;
-		margin-bottom: 39px;
+	// h1 {
+	// 	@include title;
+	// 	text-align: left;
+	// 	margin-top: 19px;
+	// 	margin-bottom: 39px;
+	// }
+}
+
+.InnerWrapper {
+	display: flex;
+	margin: 0 12px;
+	flex-direction: column;
+	// min-height: 100vh;
+
+	/* PC*/
+	@media (min-width: 992px) {
+		.InnerWrapper {
+			margin: 0 16px;
+		}
 	}
 }
+
 @media (max-width: 995px) {
 	.pageWrapper {
 		margin: 0 12px 50px 12px;
