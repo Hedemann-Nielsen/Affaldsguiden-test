@@ -4,5 +4,5 @@ export const PageWrapper = ({ title, children }) => {
 	// Sætter page title
 	document.title = title;
 
-	return <section className={globalStyle.pageWrapper}></section>;
+	return <section className={globalStyle.pageWrapper}>{children}</section>;
 };

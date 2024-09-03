@@ -25,7 +25,9 @@ export const Header = () => {
 	return (
 		<>
 			<header className={style.header}>
-				<img src={logo} alt="Logo" />
+				<Link to="/home">
+					<img src={logo} alt="" />
+				</Link>
 				{!loginData ? (
 					<Link to="/login">
 						<button className={style.loginButton}>

@@ -1,0 +1,18 @@
+.footerWrapper {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: space-around;
+	img {
+		margin-left: 16px;
+	}
+	.socialIcons {
+		font-size: 48px;
+		.icon {
+			margin-left: 16px;
+		}
+	}
+}
