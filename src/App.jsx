@@ -7,10 +7,8 @@ import "./App.css";
 function App() {
 	return (
 		<>
-			<p>her er en side</p>
-			<p>ruter virker først når den aktiveres!</p>
 			{/* Bruges til CreateBrowserRouyter uden loader */}
-			return <RouterProvider router={routes} />;
+			<RouterProvider router={routes} />
 			{/* Bruges til CreateBrowserRouter med Loader */}
 			{/* <div>{loading ? <Loader /> : <RouterProvider router={routes} />}</div>; */}
 		</>
