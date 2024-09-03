@@ -20,7 +20,8 @@ import { ArtikelDetails } from "../Customers/Artikler/ArtikelDetails.jsx";
 export const routes = createBrowserRouter([
 	{
 		path: "/",
-		element: <Layout />,
+		// Layout er placeret på alle pages i SiThreedotjs, flyttes EventTarget.
+		// element: <Layout />,
 		children: [
 			{
 				index: true,
