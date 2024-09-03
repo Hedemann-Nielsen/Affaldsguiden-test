@@ -1,18 +1,21 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "../Layout/Layout.jsx";
 import { HomePage } from "../../Pages/HomePage.jsx";
-// import { TicketsPage } from "../../Pages/TicketsPage.jsx";
-// import { LineupPage } from "../../Pages/LineupPage.jsx";
-import { Login } from "../../Components/Customers/Login/Login.jsx";
-// import { ProgramPage } from "../../Pages/ProgramPage.jsx";
-// import { CampsPage } from "../../Pages/CampsPage.jsx";
-import { FallbackPage } from "../../Pages/FallbackPag.jsx";
-// import { InfoPage } from "../../Pages/InfoPage.jsx";
-// import { StageDetailsPage } from "../../Pages/StageDetailsPage.jsx";
-// import { Lineup } from "../LineupComponent/Lineup.jsx";
-import { CreateUser } from "../Customers/Login/CreateUser.jsx";
+import { SorteringsPage } from "../../Pages/SorteringsPage.jsx";
 import { LoginPage } from "../../Pages/LoginPage.jsx";
-// import { BasketPage } from "../../Pages/BasketPage.jsx";
+import { FallbackPage } from "../../Pages/FallbackPage.jsx";
+import { StationerPage } from "../../Pages/StationerPage.jsx";
+import { ArtikelPage } from "../../Pages/ArtikelPage.jsx";
+import { BestilPage } from "../../Pages/BestilPage.jsx";
+
+import { Login } from "../../Components/Customers/Login/Login.jsx";
+import { CreateUser } from "../Customers/Login/CreateUser.jsx";
+import { Sortering } from "../Customers/Sorteringsguide/Sortering.jsx";
+import { Kategori } from "../Customers/Sorteringsguide/Kategori.jsx";
+import { Genbrugsstationer } from "../Customers/Stationer/Genbrugsstationer.jsx";
+import { StationsDetails } from "../Customers/Stationer/StationsDetails.jsx";
+import { Artikler } from "../Customers/Artikler/Artikler.jsx";
+import { ArtikelDetails } from "../Customers/Artikler/ArtikelDetails.jsx";
 
 export const routes = createBrowserRouter([
 	{
@@ -27,37 +30,24 @@ export const routes = createBrowserRouter([
 				path: "/home",
 				element: <HomePage />,
 			},
-			//nested router
-			// {
-			// 	path: "/tickets",
-			// 	children: [
-			// 		{
-			// 			index: true,
-			// 			element: <TicketsPage />,
-			// 		},
-			// 		{
-			// 			path: "/tickets/basket",
-			// 			element: <BasketPage />,
-			// 		},
-			// 	],
-			// },
+			//nested router til sorteringsguide
+			{
+				path: "/sortering",
+				element: <SorteringsPage />,
 
-			//nested router
-			// {
-			// 	path: "/lineup",
-			// 	element: <LineupPage />,
-			// 	children: [
-			// 		{
-			// 			index: true,
-			// 			element: <Lineup />,
-			// 		},
-			// 		{
-			// 			path: "/lineup/:stage_id",
-			// 			element: <StageDetailsPage />,
-			// 		},
-			// 	],
-			// },
+				children: [
+					{
+						index: true,
+						element: <Sortering />,
+					},
+					{
+						path: "/sortering/kategori",
+						element: <Kategori />,
+					},
+				],
+			},
 
+			//nested router til login
 			{
 				path: "/login",
 				element: <LoginPage />,
@@ -72,19 +62,45 @@ export const routes = createBrowserRouter([
 					},
 				],
 			},
+			//nested router til genbrugsstationer
+			{
+				path: "/genbrugsstationer",
+				element: <StationerPage />,
 
-			// {
-			// 	path: "/camps",
-			// 	element: <CampsPage />,
-			// },
-			// {
-			// 	path: "/info",
-			// 	element: <InfoPage />,
-			// },
-			// {
-			// 	path: "/program",
-			// 	element: <ProgramPage />,
-			// },
+				children: [
+					{
+						index: true,
+						element: <Genbrugsstationer />,
+					},
+					{
+						path: "/genbrugsstationer/:id",
+						element: <StationsDetails />,
+					},
+				],
+			},
+
+			//nested router til artikler
+			{
+				path: "/artikler",
+				element: <ArtikelPage />,
+
+				children: [
+					{
+						index: true,
+						element: <Artikler />,
+					},
+					{
+						path: "/artikler/:id",
+						element: <ArtikelDetails />,
+					},
+				],
+			},
+
+			{
+				path: "/bestil",
+				element: <BestilPage />,
+			},
+
 			{
 				path: "*",
 				element: <FallbackPage />,
