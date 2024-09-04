@@ -52,19 +52,20 @@ export const Home = () => {
 				<img src={affaldssortering} alt="affalds sortering" />
 				<div>
 					{articleWithId4 && (
-						<section className={style.fixedarticleBox} key={articleWithId4.id}>
-							<h2
-								className={`${globalStyle.subtitle2} ${style.secondPartText}`}>
+						<section
+							className={style.fixedarticleButtomBox}
+							key={articleWithId4.id}>
+							<h2>
 								Få gode idéer til, hvordan du gør det nemt at sortere affaldet
 								hjemme hos dig.
 							</h2>
 							<Link className={style.tipsogTricksWrapper}>
-								<h2 className={`${globalStyle.subtitle2} ${style.header}`}>
+								<h3 className={`${globalStyle.subtitle2}`}>
 									{articleWithId4.title.split("-")[0]}-
 									<span className={style.secondPartText}>
 										{articleWithId4.title.split("-")[1]}
 									</span>
-								</h2>
+								</h3>
 								<div className={style.FaArrowAltCircleRightWrapperButtom}>
 									<FaArrowAltCircleRight
 										className={style.FaArrowAltCircleRight}

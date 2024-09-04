@@ -12,7 +12,7 @@ export const Footer = () => {
 		<>
 			<footer className={globalStyle.footer}>
 				<div className={style.footerWrapper}>
-					<div>
+					<div className={style.addresse}>
 						<h2 className={globalStyle.subtitle2}>AffaldsGuiden</h2>
 						<p className={globalStyle.text}>Øster Uttrupvej 1A</p>
 						<p className={globalStyle.text}>9000 Aalborg</p>

@@ -151,18 +151,15 @@ a {
 }
 
 .innerWrapper {
-	padding: 0 117px;
+	padding: 0;
+
 	// background: linear-gradient(180deg, #06682d 0%, #fff 734px, #ffffff 734px);
 }
+
 /* PC*/
 @media (min-width: 992px) {
 	.InnerWrapper {
-		margin: 0 16px;
-	}
-}
-@media (max-width: 995px) {
-	.pageWrapper {
-		margin: 0 12px 50px 12px;
+		padding: 0 117px;
 	}
 }
 

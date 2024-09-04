@@ -16,3 +16,17 @@
 		}
 	}
 }
+
+//mobil
+@media (max-width: 768px) {
+	.footerWrapper {
+		top: 70%;
+
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+		.addresse {
+			text-align: center;
+		}
+	}
+}

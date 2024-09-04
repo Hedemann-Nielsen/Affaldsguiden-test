@@ -5,35 +5,35 @@ import { useState } from "react";
 
 import style from "./Navigation.module.scss";
 
-export default function Navigation() {
+export const MobileNavigation = () => {
 	const [isOpen, setOpen] = useState(false);
 	return (
 		<>
 			<div className={style.mobilNavWrapper}>
 				{/* brugermenu fra react npm pakke */}
+
 				<Hamburger
 					toggled={isOpen}
 					toggle={setOpen}
 					rounded
 					direction="right"
-					color="#fff"
 				/>
 
-				<nav className={`${style.navigation} ${isOpen && style.activeMobil}`}>
-					<ul></ul>
-					{MenuData &&
-						MenuData.map((menu) => {
-							return (
-								<ul key={menu.id}>
-									<li>
-										<NavLink to={menu.url}>{menu.title}</NavLink>
+				<nav className={`${style.navMobilMenu} ${isOpen && style.activeMobil}`}>
+					<ul>
+						{MenuData &&
+							MenuData.map((menu) => {
+								return (
+									<li key={menu.id}>
+										<NavLink to={menu.url} className={style.navText}>
+											{menu.title}
+										</NavLink>
 									</li>
-								</ul>
-							);
-						})}
-					<ul></ul>
+								);
+							})}
+					</ul>
 				</nav>
 			</div>
 		</>
 	);
-}
+};
