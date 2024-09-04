@@ -50,7 +50,8 @@ ol {
 	font-family: "Open Sans", sans-serif;
 }
 
-a {
+a,
+link {
 	color: none;
 	text-decoration: inherit; /* no underline */
 }
@@ -178,13 +179,6 @@ a {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		// h2 {
-		// 	@include title;
-		// 	text-align: center;
-		// }
-		// p {
-		// 	@include text;
-		// }
 	}
 }
 
@@ -202,11 +196,6 @@ a {
 	.modal {
 		width: 80%;
 		height: 80%;
-		// div {
-		// 	h2 {
-		// 		font-size: 28px;
-		// 	}
-		// }
 	}
 }
 

@@ -1,0 +1,32 @@
+@use "../../../Styles/Helpers/variables" as *;
+
+.sortering {
+	margin: 0 122px;
+	padding: 64px 45px;
+	background: linear-gradient(180deg, $color-lightGreen 0%, #ffffff 734px);
+	// height: 2000px;
+	figure {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 64px;
+		margin-top: 51px;
+		.kategoriWrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 518px;
+			height: 181px;
+			border-radius: 8px;
+			// background-color: blue;
+
+			h2 {
+				padding-left: 64px;
+				padding-top: 90px;
+				color: #ffffff;
+			}
+			img {
+				height: 181px;
+			}
+		}
+	}
+}

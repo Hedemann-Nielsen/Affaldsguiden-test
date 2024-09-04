@@ -34,7 +34,7 @@ export const routes = createBrowserRouter([
 			//nested router til sorteringsguide
 			{
 				path: "/sortering",
-				element: <SorteringsPage />,
+				element: <Sortering />,
 
 				children: [
 					{
@@ -42,7 +42,7 @@ export const routes = createBrowserRouter([
 						element: <Sortering />,
 					},
 					{
-						path: "/sortering/kategori",
+						path: "/sortering/kategori/:id",
 						element: <Kategori />,
 					},
 				],

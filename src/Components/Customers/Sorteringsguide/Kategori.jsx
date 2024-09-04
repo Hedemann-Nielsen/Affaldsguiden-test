@@ -1,3 +1,3 @@
 export const Kategori = () => {
-	return <div>Kategori</div>;
+	return <div>her vises kategorien</div>;
 };

@@ -8,25 +8,28 @@ export const RandomArticles = ({ articles }) => {
 
 	return (
 		<div className={style.artikleWrapper}>
-			{articles.map((article) => {
-				const [firstPart, secondPart] = article.title.split("-");
-				return (
-					<section className={style.articleBox} key={article.id}>
-						<h2 className={`${globalStyle.subtitle2} ${style.header}`}>
-							{firstPart}-
-							<span className={style.secondPartText}>{secondPart}</span>
-						</h2>
-						<p
-							className={`${globalStyle.text} ${style.teaserText}`}
-							dangerouslySetInnerHTML={{
-								__html: `${article.teaser}`,
-							}}></p>
-						<div className={style.FaArrowAltCircleRightWrapper}>
-							<FaArrowAltCircleRight className={style.FaArrowAltCircleRight} />
-						</div>
-					</section>
-				);
-			})}
+			{articles &&
+				articles.map((article) => {
+					const [firstPart, secondPart] = article.title.split("-");
+					return (
+						<section className={style.articleBox} key={article.id}>
+							<h2 className={`${globalStyle.subtitle2} ${style.header}`}>
+								{firstPart}-
+								<span className={style.secondPartText}>{secondPart}</span>
+							</h2>
+							<p
+								className={`${globalStyle.text} ${style.teaserText}`}
+								dangerouslySetInnerHTML={{
+									__html: `${article.teaser}`,
+								}}></p>
+							<div className={style.FaArrowAltCircleRightWrapper}>
+								<FaArrowAltCircleRight
+									className={style.FaArrowAltCircleRight}
+								/>
+							</div>
+						</section>
+					);
+				})}
 		</div>
 	);
 };
