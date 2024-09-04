@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { useSupabase } from "../../Providers/SupabaseProvider";
 
-export const useTrachSections = () => {
+export const useArticlesData = () => {
 	const { supabase } = useSupabase();
-	const [trachSectionsData, setTrachSectionsData] = useState([]);
+	const [articlesData, setArticlesData] = useState([]);
 
 	useEffect(() => {
-		const getTrachSectionsData = async () => {
+		const getArticlesData = async () => {
 			try {
 				if (supabase) {
 					const { data, error } = await supabase
-						.from("trash_sections") //henter fra tabellen trash_sections
+						.from("articles") //henter fra tabellen trash_sections
 						.select("*"); // henter alle kolonnen
 					if (error) {
 						console.error(
@@ -18,8 +18,8 @@ export const useTrachSections = () => {
 							error.message
 						);
 					} else {
-						console.log(data);
-						setTrachSectionsData(data);
+						// console.log(data);
+						setArticlesData(data);
 					}
 				}
 			} catch (error) {
@@ -27,8 +27,8 @@ export const useTrachSections = () => {
 			}
 		};
 
-		getTrachSectionsData();
+		getArticlesData();
 	}, [supabase]);
 
-	return trachSectionsData;
+	return articlesData;
 };

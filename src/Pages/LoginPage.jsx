@@ -1,11 +1,11 @@
 import { PageWrapper } from "../Components/Common/Wrappers/PageWrapper";
-import { Layout } from "../Components/Layout/Layout";
+import { Login } from "../Components/Customers/Login/Login";
 
 export const LoginPage = () => {
 	return (
 		<>
 			<PageWrapper title={"Login"}>
-				<Layout />
+				<Login />
 			</PageWrapper>
 		</>
 	);

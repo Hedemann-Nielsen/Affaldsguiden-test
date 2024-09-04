@@ -21,7 +21,7 @@ export const routes = createBrowserRouter([
 	{
 		path: "/",
 		// Layout er placeret på alle pages i SiThreedotjs, flyttes EventTarget.
-		// element: <Layout />,
+		element: <Layout />,
 		children: [
 			{
 				index: true,

@@ -1,11 +1,11 @@
-import { Layout } from "../Components/Layout/Layout.jsx";
 import { PageWrapper } from "../Components/Common/Wrappers/PageWrapper";
+import { Artikler } from "../Components/Customers/Artikler/Artikler.jsx";
 
 export const ArtikelPage = () => {
 	return (
 		<>
 			<PageWrapper title={"Artikler"}>
-				<Layout />
+				<Artikler />
 			</PageWrapper>
 		</>
 	);

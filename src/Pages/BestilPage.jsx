@@ -1,11 +1,11 @@
-import { Layout } from "../Components/Layout/Layout.jsx";
 import { PageWrapper } from "../Components/Common/Wrappers/PageWrapper";
+import { Bestil } from "../Components/Customers/Bestilling/Bestil.jsx";
 
 export const BestilPage = () => {
 	return (
 		<>
 			<PageWrapper title={"Bestilling"}>
-				<Layout />
+				<Bestil />
 			</PageWrapper>
 		</>
 	);
