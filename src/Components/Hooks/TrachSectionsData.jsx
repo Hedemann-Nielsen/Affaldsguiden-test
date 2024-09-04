@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import { useSupabase } from "../../Providers/SupabaseProvider";
 
-export const useCategories = () => {
+export const useTrachSections = () => {
 	const { supabase } = useSupabase();
-	const [categoriesData, setCategoriesData] = useState([]);
+	const [trachSectionsData, setTrachSectionsData] = useState([]);
 
 	useEffect(() => {
-		const getCategoriesData = async () => {
+		const getTrachSectionsDataData = async () => {
 			try {
 				if (supabase) {
 					const { data, error } = await supabase
-						.from("categories") //henter fra tabellen categories
-						.select("title"); // henter  title kolonnen
+						.from("trash_sections") //henter fra tabellen trash_sections
+						.select("*"); // henter alle kolonnen
 					if (error) {
 						console.error(
 							"Fejl ved hentning af data fra categoriesData:",
@@ -19,7 +19,7 @@ export const useCategories = () => {
 						);
 					} else {
 						console.log(data);
-						setCategoriesData(data);
+						setTrachSectionsData(data);
 					}
 				}
 			} catch (error) {
@@ -27,8 +27,8 @@ export const useCategories = () => {
 			}
 		};
 
-		getCategoriesData();
+		getTrachSectionsDataData();
 	}, [supabase]);
 
-	return categoriesData;
+	return trachSectionsData;
 };
