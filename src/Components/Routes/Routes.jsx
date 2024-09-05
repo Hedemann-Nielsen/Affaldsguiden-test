@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "../Layout/Layout.jsx";
 import { HomePage } from "../../Pages/HomePage.jsx";
-import { SorteringsPage } from "../../Pages/SorteringsPage.jsx";
 import { LoginPage } from "../../Pages/LoginPage.jsx";
 import { FallbackPage } from "../../Pages/FallbackPage.jsx";
 import { StationerPage } from "../../Pages/StationerPage.jsx";
@@ -10,12 +9,13 @@ import { BestilPage } from "../../Pages/BestilPage.jsx";
 
 import { Login } from "../../Components/Customers/Login/Login.jsx";
 import { CreateUser } from "../Customers/Login/CreateUser.jsx";
-import { Sortering } from "../Customers/Sorteringsguide/Sortering.jsx";
-import { Kategori } from "../Customers/Sorteringsguide/Kategori.jsx";
+import { Sektioner } from "../Customers/Sorteringsguide/Sektioner.jsx";
+import { Kategorier } from "../Customers/Sorteringsguide/Kategorier.jsx";
 import { Genbrugsstationer } from "../Customers/Stationer/Genbrugsstationer.jsx";
 import { StationsDetails } from "../Customers/Stationer/StationsDetails.jsx";
 import { Artikler } from "../Customers/Artikler/Artikler.jsx";
 import { ArtikelDetails } from "../Customers/Artikler/ArtikelDetails.jsx";
+import { SektionerPage } from "../../Pages/SektionerPage.jsx";
 
 export const routes = createBrowserRouter([
 	{
@@ -31,21 +31,15 @@ export const routes = createBrowserRouter([
 				path: "/home",
 				element: <HomePage />,
 			},
-			//nested router til sorteringsguide
 			{
-				path: "/sortering",
-				element: <Sortering />,
-
-				children: [
-					{
-						index: true,
-						element: <Sortering />,
-					},
-					{
-						path: "/sortering/kategori/:id",
-						element: <Kategori />,
-					},
-				],
+				// Route til sektioner
+				path: "/sektioner",
+				element: <SektionerPage />,
+			},
+			{
+				// Route til kategori-detalje
+				path: "/sektioner/kategori/:id",
+				element: <Kategorier />,
 			},
 
 			//nested router til login

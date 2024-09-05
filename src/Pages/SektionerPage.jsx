@@ -1,11 +1,11 @@
 import { PageWrapper } from "../Components/Common/Wrappers/PageWrapper.jsx";
-import { Sortering } from "../Components/Customers/Sorteringsguide/Sortering.jsx";
+import { Sektioner } from "../Components/Customers/Sorteringsguide/Sektioner.jsx";
 
-export const SorteringsPage = () => {
+export const SektionerPage = () => {
 	return (
 		<>
 			<PageWrapper title={"Sorteringsguide"}>
-				<Sortering />
+				<Sektioner />
 			</PageWrapper>
 		</>
 	);

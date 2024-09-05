@@ -4,13 +4,15 @@ import { useTrachSections } from "../../Hooks/TrachSectionsData.jsx";
 import globalStyle from "./../../../Styles/GlobalStyles.module.scss";
 import style from "./Sortering.module.scss";
 
-export const Sortering = () => {
+export const Sektioner = () => {
 	const trashSections = useTrachSections();
 
 	return (
 		<main className={style.sortering}>
 			<h1 className={globalStyle.title}>Sorteringsguide</h1>
-			<h2 className={globalStyle.subTitle2}>Vælg section</h2>
+			<h2 className={` ${style.subtitle}  ${globalStyle.subtitle2}`}>
+				Vælg section
+			</h2>
 			<figure>
 				{trashSections &&
 					trashSections.map((section) => {
@@ -21,9 +23,11 @@ export const Sortering = () => {
 
 						return (
 							<Link
-								to={`/sortering/kategori/${section.id}`}
+								to={`/sektioner/kategori/${section.id}`}
 								className={globalStyle.link}
-								key={section.id}>
+								key={section.id}
+								state={{ title: section.title }} // Send title videre via state
+							>
 								<div
 									className={style.kategoriWrapper}
 									style={{ backgroundColor }}>

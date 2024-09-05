@@ -4,7 +4,9 @@
 	margin: 0 122px;
 	padding: 64px 45px;
 	background: linear-gradient(180deg, $color-lightGreen 0%, #ffffff 734px);
-	// height: 2000px;
+	.subtitle {
+		color: $color-forrestGreen;
+	}
 	figure {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -17,16 +19,137 @@
 			width: 518px;
 			height: 181px;
 			border-radius: 8px;
-			// background-color: blue;
 
 			h2 {
 				padding-left: 64px;
-				padding-top: 90px;
+
 				color: #ffffff;
 			}
 			img {
 				height: 181px;
 			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.sortering {
+		margin: 0 20px;
+	}
+	figure {
+		grid-template-columns: 1fr;
+		gap: 20px;
+
+		width: 100%;
+		.kategoriWrapper {
+			display: block;
+			width: 100%;
+		}
+	}
+}
+//styling til kategorier
+.KategorierWrapper {
+	margin: 0 122px;
+	padding: 64px 45px;
+	background: linear-gradient(180deg, $color-lightGreen 0%, #ffffff 734px);
+
+	.subtitle {
+		margin: 64px 0;
+		color: $color-forrestGreen;
+	}
+	details {
+		border-radius: 8px 8px 0px 0px;
+		border: solid 1px $color-mossGreen;
+		margin-bottom: 50px;
+		background-color: #fff;
+	}
+	/* Når details er åbent */
+	details[open] .arrowWrapper {
+		bottom: 0; /* Juster positionen for åbent tilstand */
+		transform: translate(-50%, 50%); /* Flyt cirklen nedad */
+	}
+
+	/* Pil opad når details er åbent */
+	details[open] .IoIosArrowDown {
+		transform: rotate(-180deg);
+	}
+	.categoryBox {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		height: 171px;
+		padding: 6px 36px;
+		border-radius: 8px 8px 0px 0px;
+		border: solid 0, 5px $color-mossGreen;
+		border-bottom: none;
+		cursor: pointer;
+		.leftAlign {
+			display: flex;
+			align-items: center;
+			p {
+				margin-left: 50px;
+			}
+		}
+
+		img:first-child {
+			width: 96px;
+		}
+		img:last-child {
+			width: 160px;
+		}
+		.arrowWrapper {
+			position: absolute;
+			bottom: -32px;
+			left: 50%;
+			transform: translate(-50%, 0);
+			background-color: $color-lightGreen;
+			border-radius: 100%;
+			width: 64px;
+			height: 64px;
+			transition: transform 0.3s ease, bottom 0.3s ease;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.IoIosArrowDown {
+			transition: transform 0.3s ease;
+			font-size: 24px;
+		}
+	}
+	.content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 68px;
+		text-align: left;
+		margin: 0 45px;
+		margin-top: 32px;
+
+		hr {
+			// height: 5px;
+			background-color: $color-mossGreen;
+			// border: none;
+			border-radius: 8px;
+		}
+		.succes {
+			color: $color-succes !important;
+		}
+		.error {
+			color: $color-error !important;
+		}
+		ul {
+			list-style: none;
+			li {
+				margin: 9px 0;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.KategorierWrapper {
+		margin: 0 20px;
+		.subtitle {
+			margin: 20px 0;
 		}
 	}
 }
