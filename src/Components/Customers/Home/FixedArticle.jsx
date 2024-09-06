@@ -21,7 +21,7 @@ export const FixedArticle = ({ article, imageAlt }) => {
 							dangerouslySetInnerHTML={{
 								__html: `${article.teaser}`,
 							}}></p>
-						<div className={style.FaArrowAltCircleRightWrapper}>
+						<div>
 							<FaArrowAltCircleRight className={style.FaArrowAltCircleRight} />
 						</div>
 					</section>

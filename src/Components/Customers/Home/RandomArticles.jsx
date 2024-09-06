@@ -2,6 +2,7 @@ import { FaArrowAltCircleRight } from "react-icons/fa";
 
 import globalStyle from "../../../Styles/GlobalStyles.module.scss";
 import style from "./Home.module.scss";
+import { Link } from "react-router-dom";
 
 export const RandomArticles = ({ articles }) => {
 	if (!articles || articles.length === 0) return null;
@@ -12,7 +13,10 @@ export const RandomArticles = ({ articles }) => {
 				articles.map((article) => {
 					const [firstPart, secondPart] = article.title.split("-");
 					return (
-						<section className={style.articleBox} key={article.id}>
+						<Link
+							to={`/artikler/${article.id}`}
+							className={style.articleBox}
+							key={article.id}>
 							<h2 className={`${globalStyle.subtitle2} ${style.header}`}>
 								{firstPart}-
 								<span className={style.secondPartText}>{secondPart}</span>
@@ -27,7 +31,7 @@ export const RandomArticles = ({ articles }) => {
 									className={style.FaArrowAltCircleRight}
 								/>
 							</div>
-						</section>
+						</Link>
 					);
 				})}
 		</div>

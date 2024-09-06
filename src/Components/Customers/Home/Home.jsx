@@ -39,43 +39,53 @@ export const Home = () => {
 	}, [articles]);
 
 	return (
-		<main className={style.home}>
-			<div className={style.innerGradient}>
-				<img src={malerspande} alt="malerspande" />
-			</div>
-
-			<RandomArticles articles={randomArticles} />
-
-			<FixedArticle article={articleWithId2} imageAlt={articleWithId2?.title} />
-
-			<div className={style.fixedartikleButtomWrapper}>
-				<img src={affaldssortering} alt="affalds sortering" />
-				<div>
-					{articleWithId4 && (
-						<section
-							className={style.fixedarticleButtomBox}
-							key={articleWithId4.id}>
-							<h2>
-								Få gode idéer til, hvordan du gør det nemt at sortere affaldet
-								hjemme hos dig.
-							</h2>
-							<Link className={style.tipsogTricksWrapper}>
-								<h3 className={`${globalStyle.subtitle2}`}>
-									{articleWithId4.title.split("-")[0]}-
-									<span className={style.secondPartText}>
-										{articleWithId4.title.split("-")[1]}
-									</span>
-								</h3>
-								<div className={style.FaArrowAltCircleRightWrapperButtom}>
-									<FaArrowAltCircleRight
-										className={style.FaArrowAltCircleRight}
-									/>
-								</div>
-							</Link>
-						</section>
-					)}
+		<>
+			<main className={style.home}>
+				<div className={style.innerGradient}>
+					<img src={malerspande} alt="malerspande" />
 				</div>
-			</div>
-		</main>
+
+				<RandomArticles articles={randomArticles} />
+			</main>
+
+			<main>
+				<FixedArticle
+					article={articleWithId2}
+					imageAlt={articleWithId2?.title}
+				/>
+				<div className={style.fixedartikleButtomWrapper}>
+					<div className={style.fixedartikleButtomContainer}>
+						<img src={affaldssortering} alt="affalds sortering" />
+						<div>
+							{articleWithId4 && (
+								<section
+									className={style.fixedarticleButtomBox}
+									key={articleWithId4.id}>
+									<h2 className={globalStyle.subtitle2}>
+										Få gode idéer til, hvordan du gør det nemt at sortere
+										affaldet hjemme hos dig.
+									</h2>
+									<Link
+										to={`/artikler/${articleWithId4.id}`}
+										className={style.tipsogTricksWrapper}>
+										<h3 className={`${globalStyle.subtitle2}`}>
+											{articleWithId4.title.split("-")[0]}-
+											<span className={style.secondPartText}>
+												{articleWithId4.title.split("-")[1]}
+											</span>
+										</h3>
+										<div className={style.FaArrowAltCircleRightWrapperButtom}>
+											<FaArrowAltCircleRight
+												className={style.FaArrowAltCircleRight}
+											/>
+										</div>
+									</Link>
+								</section>
+							)}
+						</div>
+					</div>
+				</div>
+			</main>
+		</>
 	);
 };
