@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useArticlesData } from "../../Hooks/ArticlesData";
+import { useArticlesTrueData } from "../../Hooks/ArticlesData";
 
 import { RandomArticles } from "./RandomArticles";
 import { FixedArticle } from "./FixedArticle";
@@ -13,7 +13,7 @@ import style from "./Home.module.scss";
 import { Link } from "react-router-dom";
 
 export const Home = () => {
-	const articles = useArticlesData();
+	const articles = useArticlesTrueData();
 	const [randomArticles, setRandomArticles] = useState([]);
 	const [articleWithId2, setArticleWithId2] = useState(null);
 	const [articleWithId4, setArticleWithId4] = useState(null);

@@ -1,6 +1,7 @@
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import globalStyle from "../../../Styles/GlobalStyles.module.scss";
 import style from "./Home.module.scss";
+import { Link } from "react-router-dom";
 
 export const FixedArticle = ({ article, imageAlt }) => {
 	if (!article) return null;
@@ -21,9 +22,9 @@ export const FixedArticle = ({ article, imageAlt }) => {
 							dangerouslySetInnerHTML={{
 								__html: `${article.teaser}`,
 							}}></p>
-						<div>
+						<Link to={`/artikler/${article.id}`}>
 							<FaArrowAltCircleRight className={style.FaArrowAltCircleRight} />
-						</div>
+						</Link>
 					</section>
 				</div>
 				<img src={article.image_url} alt={imageAlt} />
