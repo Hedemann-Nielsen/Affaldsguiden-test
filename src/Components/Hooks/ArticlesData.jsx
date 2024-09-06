@@ -10,7 +10,7 @@ export const useArticlesData = () => {
 			try {
 				if (supabase) {
 					const { data, error } = await supabase
-						.from("articles") //henter fra tabellen trash_sections
+						.from("articles") //henter fra tabellen articles
 						.select("*"); // henter alle kolonnen
 					if (error) {
 						console.error(

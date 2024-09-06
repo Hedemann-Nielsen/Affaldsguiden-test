@@ -13,7 +13,6 @@ export const Kategorier = () => {
 	const location = useLocation();
 	const sectionTitle = location.state?.title || "Kategori"; // Fallback hvis ingen title er sendt
 
-	// Logik til filtrering flyttet op over return
 	const filteredCategories = categoriesData?.map((category) => {
 		const allowedItems = category.trash_category_type_rel.filter(
 			(item) => item.is_allowed === true

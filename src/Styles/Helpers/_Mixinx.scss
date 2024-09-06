@@ -13,10 +13,14 @@
 
 @mixin subtitle2 {
 	font-size: 28px;
-	text-transform: capitalize;
 	font-family: "Open Sans", sans-serif;
 	color: $color-deepGreen;
 	font-weight: 600;
+	line-height: 33px;
+
+	&::first-letter {
+		text-transform: uppercase;
+	}
 }
 
 @mixin subtitle3 {

@@ -5,7 +5,7 @@ export const ArtikelPage = () => {
 	return (
 		<>
 			<PageWrapper title={"Artikler"}>
-				<Artikler />
+				<outlet />
 			</PageWrapper>
 		</>
 	);

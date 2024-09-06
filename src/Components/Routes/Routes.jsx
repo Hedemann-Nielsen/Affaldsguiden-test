@@ -66,18 +66,11 @@ export const routes = createBrowserRouter([
 			//nested router til artikler
 			{
 				path: "/artikler",
-				element: <ArtikelPage />,
-
-				children: [
-					{
-						index: true,
-						element: <Artikler />,
-					},
-					{
-						path: "/artikler/:id",
-						element: <ArtikelDetails />,
-					},
-				],
+				element: <Artikler />,
+			},
+			{
+				path: "/artikler/:id",
+				element: <ArtikelDetails />,
 			},
 
 			{

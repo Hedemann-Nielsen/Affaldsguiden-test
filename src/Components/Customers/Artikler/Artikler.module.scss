@@ -1,0 +1,35 @@
+@use "../../../Styles/Helpers/variables" as *;
+
+.artikler {
+	margin: 0 122px;
+	padding: 64px 45px;
+	background: linear-gradient(180deg, $color-lightGreen 0%, #ffffff 734px);
+	.articleContainer {
+		display: grid;
+		grid-template-columns: 1fr 3fr;
+		gap: 32px;
+		margin: 64px 0;
+		img {
+			width: 100%;
+		}
+		div {
+			p {
+				color: black !important;
+				padding-top: 10px;
+			}
+		}
+	}
+}
+
+//styling for artikel en specifik artikel
+.articleDetails {
+	margin: 0 122px;
+	padding: 64px 45px;
+	background: linear-gradient(180deg, $color-lightGreen 0%, #ffffff 734px);
+	h2 {
+		color: $color-forrestGreen;
+	}
+	p {
+		margin: 32px 0 48px;
+	}
+}
