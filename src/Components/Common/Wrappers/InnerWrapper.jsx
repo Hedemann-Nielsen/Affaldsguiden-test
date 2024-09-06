@@ -10,17 +10,20 @@ export const InnerWrapper = ({ children }) => {
 	let background =
 		"linear-gradient(180deg, #06682d 0%, #fff 734px, #ffffff 734px)";
 
+	// Få sektion ID fra stien
+	const sectionId = parseInt(location.pathname.split("/").pop(), 10);
+
 	// Tjek hvis trachSectionsData har data
 	if (trachSectionsData && trachSectionsData.length > 0) {
 		// Find den sektion, der matcher den nuværende rute
 		const matchingSection = trachSectionsData.find(
-			(section) =>
-				`/${section.title.toLowerCase()}` === location.pathname.toLowerCase()
+			(section) => section.id === sectionId
 		);
+		console.log(matchingSection, "matchingSection");
 
-		// Hvis der er en matchende sektion, brug dens farve
+		// Hvis der er en matchende sektion, brug dens farve i gradientetn
 		if (matchingSection) {
-			background = `linear-gradient(180deg, #${matchingSection.color} 0%, #${matchingSection.color} 734px, #ffffff 734px)`;
+			background = `linear-gradient(180deg, #${matchingSection.color} 0%, #fff 734px, #ffffff 734px)`;
 		}
 	}
 
