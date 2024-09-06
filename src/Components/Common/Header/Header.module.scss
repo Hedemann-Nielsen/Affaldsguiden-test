@@ -17,15 +17,13 @@
 		&:hover {
 			background-color: $color-kaki;
 		}
-		.logInIcon {
+		.logInIcon,
+		.logOutIcon {
 			position: relative;
 			top: 3px;
 			margin: 0 0 0 4px;
 			font-family: "Open Sans", sans-serif;
 			font-size: 20px;
-		}
-
-		.logOutIcon {
 		}
 	}
 }

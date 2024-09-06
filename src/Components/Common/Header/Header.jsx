@@ -6,10 +6,11 @@ import { useAuth } from "../../../Providers/AuthProvider";
 import { IoMdLogIn } from "react-icons/io";
 import { IoMdLogOut } from "react-icons/io";
 import style from "./Header.module.scss";
+import { useSupabase } from "../../../Providers/SupabaseProvider";
 
 export const Header = () => {
+	const { supabase } = useSupabase();
 	const { loginData, setLoginData } = useAuth();
-	const [username, setUsername] = useState("");
 
 	const handleLogout = async () => {
 		try {
@@ -36,7 +37,7 @@ export const Header = () => {
 					</Link>
 				) : (
 					<>
-						<p>Du er logget ind som {username}</p>
+						<p>Du er logget ind som {loginData.user.email}</p>
 						<button onClick={handleLogout} className={style.loginButton}>
 							Log ud <IoMdLogOut className={style.logOutIcon} />
 						</button>
