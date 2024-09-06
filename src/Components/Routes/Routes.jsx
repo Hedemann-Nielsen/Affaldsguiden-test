@@ -30,12 +30,10 @@ export const routes = createBrowserRouter([
 				element: <HomePage />,
 			},
 			{
-				// Route til sektioner
 				path: "/sektioner",
 				element: <SektionerPage />,
 			},
 			{
-				// Route til kategori-detalje
 				path: "/sektioner/kategori/:id",
 				element: <Kategorier />,
 			},

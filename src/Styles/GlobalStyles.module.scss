@@ -82,6 +82,7 @@ link {
 	font-size: 1.2rem;
 	margin-top: 10px;
 }
+
 .errorInput {
 	border: 1px solid red;
 	background-color: #fdd !important;
@@ -91,17 +92,57 @@ link {
 	}
 }
 .successMessage {
-	color: $color-succes;
+	width: 40%;
+	padding: 13px 23px;
+	color: #fff;
+	background: linear-gradient(
+		90deg,
+		$color-forrestGreen,
+		$color-forrestGreen 50%,
+		transparent 50%
+	);
+	background-size: 200% 100%;
 	font-size: 1.2rem;
-	margin-top: 10px;
+	margin: 10px 0;
+	animation: backgroundSlide 2s forwards;
+}
+
+@keyframes backgroundSlide {
+	0% {
+		background-position: 100% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.successMessage2 {
+	width: 90%;
+	padding: 13px 23px;
+	color: #fff;
+	background: linear-gradient(
+		90deg,
+		$color-forrestGreen,
+		$color-forrestGreen 50%,
+		transparent 50%
+	);
+	background-size: 200% 100%;
+	font-size: 1.2rem;
+	margin: 10px 0;
+	animation: backgroundSlide 2s forwards;
 }
 
 //Standard knap styling til dette projekt.
 .styledButton {
 	height: 39px;
-	padding: 7px;
+	padding: 7px 57px;
 	gap: 10px;
 	border-radius: 4px;
+	border: none;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 300;
+	font-family: "Open Sans", sans-serif;
 	background-color: $color-forrestGreen;
 	box-shadow: 0px 2px 2px 0px #00000040;
 	&:hover {
@@ -166,20 +207,13 @@ link {
 
 .modal {
 	position: absolute;
-	width: 50%;
-	height: 50%;
+	width: 80%;
+	height: 80%;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	background-color: $color-lightGreen;
 	border-radius: 8px;
-	div {
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
 }
 
 .overlay {
@@ -196,27 +230,5 @@ link {
 	.modal {
 		width: 80%;
 		height: 80%;
-	}
-}
-
-//modal element styling
-.ModalForm {
-	margin-top: 15px;
-	margin-left: 50%;
-	transform: translateX(-50%);
-
-	.inputCenter {
-		display: block;
-		width: 23.125rem;
-		height: 3rem;
-		border-radius: 5px;
-		margin: 16px 0;
-
-		&::placeholder {
-			font-family: "Open Sans", sans-serif;
-			font-size: 16px;
-			font-weight: 300;
-			padding-left: 1rem;
-		}
 	}
 }

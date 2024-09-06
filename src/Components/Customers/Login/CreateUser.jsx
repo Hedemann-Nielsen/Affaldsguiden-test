@@ -23,6 +23,8 @@ export const CreateUser = () => {
 		const { password, confirmPassword, email } = data;
 		if (password !== confirmPassword) {
 			console.error("Passwords matcher ikke");
+			setErrorMessage("Der opstod en fejl: " + error.message);
+
 			return;
 		}
 		handleCreateUser({ password, email });
@@ -55,71 +57,61 @@ export const CreateUser = () => {
 
 	return (
 		<PageWrapper title="Opret bruger">
-			<form className={style.createUser} onSubmit={handleSubmit(onSubmit)}>
-				<input
-					className={globalStyle.input}
-					type="email"
-					placeholder="Email"
-					{...register("email", { required: true })}
-				/>
-				{errors.email && (
-					<span className={globalStyle.errorMessage}>
-						Dette felt er påkrævet
-					</span>
-				)}
-				<input
-					className={globalStyle.input}
-					type="text"
-					placeholder="Navn"
-					{...register("display_name", { required: true })}
-				/>
-				{errors.name && (
-					<span className={globalStyle.errorMessage}>
-						Dette felt er påkrævet
-					</span>
-				)}
-
-				<input
-					className={globalStyle.input}
-					type="text"
-					// pattern="0-9"
-					placeholder="Telefonnummer"
-					{...register("phone", { required: true })}
-				/>
-				{errors.phoneNumber && (
-					<span className={globalStyle.errorMessage}>
-						Dette felt er påkrævet
-					</span>
-				)}
-
-				<input
-					className={globalStyle.input}
-					type="password"
-					placeholder="Password"
-					{...register("password", { required: true })}
-				/>
-				{errors.password && (
-					<span className={globalStyle.errorMessage}>
-						Dette felt er påkrævet
-					</span>
-				)}
-				<input
-					className={globalStyle.input}
-					type="password"
-					placeholder="Bekræft Password"
-					{...register("confirmPassword", { required: true })}
-				/>
-				{errors.confirmPassword && <span>Dette felt er påkrævet</span>}
-				<div>
-					{errorMessage && (
-						<span className={globalStyle.errorMessage}>{errorMessage}</span>
+			<div className={style.createUserWrapper}>
+				<form className={style.createUser} onSubmit={handleSubmit(onSubmit)}>
+					<h1 className={globalStyle.title}>Opret bruger</h1>
+					<input
+						className={`${globalStyle.input} ${
+							errors.email ? globalStyle.errorInput : ""
+						}`}
+						type="email"
+						placeholder="Email"
+						{...register("email", { required: "Email er påkrævet" })}
+					/>
+					{errors.email && (
+						<span className={globalStyle.errorMessage}>
+							{errors.email.message}
+						</span>
 					)}
-				</div>
 
-				<button type="submit" className={globalStyle.styledButton}>
-					Opret bruger
-				</button>
-			</form>
+					<input
+						className={`${globalStyle.input} ${
+							errors.email ? globalStyle.errorInput : ""
+						}`}
+						type="password"
+						placeholder="Password"
+						{...register("password", { required: true })}
+					/>
+					{errors.password && (
+						<span className={globalStyle.errorMessage}>
+							Password er påkrævet
+						</span>
+					)}
+					<input
+						className={`${globalStyle.input} ${
+							errors.email ? globalStyle.errorInput : ""
+						}`}
+						type="password"
+						placeholder="Bekræft Password"
+						{...register("confirmPassword", { required: true })}
+					/>
+					{errors.confirmPassword && (
+						<span className={globalStyle.errorMessage}>
+							Bekræft password er påkrævet
+						</span>
+					)}
+					<div>
+						{errorMessage && (
+							<span className={globalStyle.errorMessage}>{errorMessage}</span>
+						)}
+					</div>
+					<div className={style.buttonContainer}>
+						<button type="submit" className={globalStyle.styledButton}>
+							Opret bruger
+						</button>
+					</div>
+				</form>
+			</div>
 		</PageWrapper>
 	);
 };

@@ -3,8 +3,11 @@ import { useClearMessageHandler } from "../../Utils/ClearMessages";
 import globalStyle from "../../../Styles/GlobalStyles.module.scss";
 import style from "./Login.module.scss";
 import { useForm } from "react-hook-form";
+import { useSupabase } from "../../../Providers/SupabaseProvider";
 
 export const ChangePassword = () => {
+	const { supabase } = useSupabase();
+
 	const {
 		errorMessage,
 		successMessage,
@@ -16,6 +19,7 @@ export const ChangePassword = () => {
 		register,
 		handleSubmit,
 		formState: { errors },
+		watch,
 	} = useForm();
 	// Funktion som håndtere ændring af password ved hjælp af supabase
 	const handleChangePassword = async ({ newPassword, confirmNewPassword }) => {
@@ -38,7 +42,7 @@ export const ChangePassword = () => {
 			} else {
 				//hvis passwordskiftet lykkedes sættes der et en succes besked og beskeden logges i konsolen med brugerens information.
 
-				setSuccessMessage("Password changed successfully");
+				setSuccessMessage("Password er ændret");
 				clearMessages();
 				console.log("Password changed successfully for user:", user);
 			}
@@ -59,7 +63,7 @@ export const ChangePassword = () => {
 				onSubmit={handleSubmit(handleChangePassword)}>
 				<input
 					className={`${globalStyle.input} ${
-						errors.newpassword ? globalStyle.errorInput : ""
+						errors.confirmNewPassword ? globalStyle.errorInput : ""
 					}`}
 					type="password"
 					placeholder="Nyt password"
@@ -94,18 +98,18 @@ export const ChangePassword = () => {
 						{errors.confirmNewPassword.message}
 					</span>
 				)}
-				{errorMessage && (
-					<span className={globalStyle.errorMessage}>{errorMessage}</span>
-				)}
-				{successMessage && (
-					<span className={globalStyle.successMessage}>{successMessage}</span>
-				)}
 				<div className={style.buttonContainer}>
 					<button className={globalStyle.styledButton} type="submit">
 						Skift Password
 					</button>
 				</div>
 			</form>
+			{errorMessage && (
+				<span className={globalStyle.errorMessage}>{errorMessage}</span>
+			)}
+			{successMessage && (
+				<span className={globalStyle.successMessage}>{successMessage}</span>
+			)}
 		</div>
 	);
 };

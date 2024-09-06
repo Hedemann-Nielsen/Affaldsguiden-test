@@ -3,33 +3,29 @@ import { useSupabase } from "../../../Providers/SupabaseProvider";
 import { useAuth } from "../../../Providers/AuthProvider";
 import { useCommentsData } from "../../Hooks/CommentsData";
 import { PageWrapper } from "../../Common/Wrappers/PageWrapper";
-import { EditCommentModal } from "../../Modal/EditCommentModal";
 import { NotLogedin } from "./NotLogedin";
 import { ChangePassword } from "./ChangePassword";
 import { useClearMessageHandler } from "../../Utils/ClearMessages";
-import { CommentsTable } from "./CommentsTable";
 import { LogoutButton } from "./LogoutButton";
-import { CommentForm } from "./CommentForm";
 
+import globalStyle from "../../../Styles/GlobalStyles.module.scss";
 import style from "./Login.module.scss";
 
 export const Login = () => {
 	const { supabase } = useSupabase();
 	const { loginData, setLoginData } = useAuth();
 	const [selectedComment, setSelectedComment] = useState(null); // State til valgte kommentar
-	const [isModalOpen, setIsModalOpen] = useState(false); // State til at styre modalens synlighed
-	const { commentsData, fetchComments } = useCommentsData({
-		userId: loginData?.user?.id,
-	});
+
+	console.log(loginData);
 
 	const { setErrorMessage, setSuccessMessage, clearMessages } =
 		useClearMessageHandler();
 
 	// Funktion til at redigere kommentar
-	const handleEditComment = (comment) => {
-		setSelectedComment(comment);
-		setIsModalOpen(true);
-	};
+	// const handleEditComment = (comment) => {
+	// 	setSelectedComment(comment);
+	// 	setIsModalOpen(true);
+	// };
 
 	// Post til at gemme det redigerede
 	const PosthandleSave = async (updatedComment) => {
@@ -59,25 +55,25 @@ export const Login = () => {
 	};
 
 	// Funktion til at slette kommentar
-	const handleDeleteComment = async (comment) => {
-		try {
-			const { data, error } = await supabase
-				.from("user_comments")
-				.delete()
-				.eq("id", comment.id);
-			if (error) {
-				throw error;
-			} else {
-				setSuccessMessage("Kommentaren blev slettet");
-				clearMessages();
-				alert("Kommentaren er slettet");
-				fetchComments();
-			}
-		} catch (error) {
-			setErrorMessage("Fejl ved sletning af kommentar");
-			console.error("Error deleting comment:", error);
-		}
-	};
+	// const handleDeleteComment = async (comment) => {
+	// 	try {
+	// 		const { data, error } = await supabase
+	// 			.from("user_comments")
+	// 			.delete()
+	// 			.eq("id", comment.id);
+	// 		if (error) {
+	// 			throw error;
+	// 		} else {
+	// 			setSuccessMessage("Kommentaren blev slettet");
+	// 			clearMessages();
+	// 			alert("Kommentaren er slettet");
+	// 			fetchComments();
+	// 		}
+	// 	} catch (error) {
+	// 		setErrorMessage("Fejl ved sletning af kommentar");
+	// 		console.error("Error deleting comment:", error);
+	// 	}
+	// };
 
 	// Funktion som håndtere log ud ved hjælp af supabase
 	const handleLogout = async () => {
@@ -95,13 +91,13 @@ export const Login = () => {
 		document.title = loginData ? "Velkommen" : "Login";
 	}, [loginData]);
 
-	const handleFormSubmit = (data) => {
-		PosthandleSave({
-			...selectedComment,
-			title: data.title,
-			comment: data.comment,
-		});
-	};
+	// const handleFormSubmit = (data) => {
+	// 	PosthandleSave({
+	// 		...selectedComment,
+	// 		title: data.title,
+	// 		comment: data.comment,
+	// 	});
+	// };
 
 	return (
 		<>
@@ -112,24 +108,27 @@ export const Login = () => {
 			) : (
 				<PageWrapper title="Min side">
 					<div className={style.loginWrapper}>
-						<h2 className={style.subtitle}>Mine kommentarer</h2>
+						<h1 className={globalStyle.title}>Hej {loginData.user.email}</h1>
+						{/* <h2 className={style.subtitle}>Mine kommentarer</h2>
 						<CommentsTable
 							commentsData={commentsData}
 							handleEditComment={handleEditComment}
 							handleDeleteComment={handleDeleteComment}
-						/>
+						/> */}
+
+						<LogoutButton handleLogout={handleLogout} />
+						<ChangePassword />
+
+						{/* <EditCommentModal
+							isOpen={isModalOpen}
+							onRequestClose={() => setIsModalOpen(false)}>
+							<CommentForm
+								selectedComment={selectedComment}
+								handleFormSubmit={handleFormSubmit}
+								setIsModalOpen={setIsModalOpen}
+							/>
+						</EditCommentModal> */}
 					</div>
-					<LogoutButton handleLogout={handleLogout} />
-					<ChangePassword />
-					<EditCommentModal
-						isOpen={isModalOpen}
-						onRequestClose={() => setIsModalOpen(false)}>
-						<CommentForm
-							selectedComment={selectedComment}
-							handleFormSubmit={handleFormSubmit}
-							setIsModalOpen={setIsModalOpen}
-						/>
-					</EditCommentModal>
 				</PageWrapper>
 			)}
 		</>

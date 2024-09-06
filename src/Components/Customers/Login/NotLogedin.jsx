@@ -1,17 +1,21 @@
+import { useSupabase } from "../../../Providers/SupabaseProvider";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../../../Providers/AuthProvider";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { ForgotPasswordModal } from "../../Modal/ForgotPassword.jsx";
+import { ResetPassword } from "./ResetPassword.jsx";
 
 import globalStyle from "../../../Styles/GlobalStyles.module.scss";
 import style from "./Login.module.scss";
-import { useSupabase } from "../../../Providers/SupabaseProvider";
 
 export const NotLogedin = () => {
 	const { supabase } = useSupabase();
 	const { loginData, setLoginData } = useAuth();
 	const location = useLocation();
-	const [errorMessage, setErrorMessage] = useState(""); // State til error message
+	const [errorMessage, setErrorMessage] = useState("");
+	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [resetEmail, setResetEmail] = useState("");
 
 	const userCreatedMessage = location.state?.userCreatedMessage;
 	const {
@@ -52,7 +56,7 @@ export const NotLogedin = () => {
 			{userCreatedMessage && (
 				<div className={globalStyle.successMessage}>{userCreatedMessage}</div>
 			)}
-			<p>Indtast brugernavn og password for at logge ind.</p>
+			<h2 className={globalStyle.title}>Login</h2>
 			{/* Når der klikkes på submit (login knappen) vil handleLogin blive kaldt */}
 			<form className={style.form} onSubmit={handleSubmit(handleLogin)}>
 				<input
@@ -74,7 +78,7 @@ export const NotLogedin = () => {
 					}`}
 					type="password"
 					placeholder="password"
-					{...register("password", { required: true })}
+					{...register("password", { required: "Password er påkrævet" })}
 				/>
 				{errors.password && (
 					<span className={globalStyle.errorMessage}>
@@ -92,9 +96,26 @@ export const NotLogedin = () => {
 
 				<div className={style.link}>
 					{/* sender brugeren videre til en ny side  */}
-					<Link to="/login/createUser">Opret mig som bruger</Link>
+					<Link to="/login/createUser">Opret bruger</Link>
+					<button
+						type="button"
+						className={globalStyle.unstyledButton}
+						onClick={() => setIsModalOpen(true)}>
+						Glemt password?
+					</button>
 				</div>
 			</form>
+
+			{/* Modal for glemt password */}
+			<ForgotPasswordModal
+				isOpen={isModalOpen}
+				onRequestClose={() => setIsModalOpen(false)}>
+				<ResetPassword
+					setResetEmail={setResetEmail}
+					setIsModalOpen={setIsModalOpen}
+					resetEmail={resetEmail}
+				/>
+			</ForgotPasswordModal>
 		</div>
 	);
 };
