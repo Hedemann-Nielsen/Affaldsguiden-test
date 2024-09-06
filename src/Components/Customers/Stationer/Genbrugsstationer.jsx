@@ -15,7 +15,7 @@ export const Genbrugsstationer = () => {
 	};
 
 	return (
-		<PageWrapper>
+		<PageWrapper title="Genbrugsstationer">
 			<div className={style.stations}>
 				<h1 className={globalStyle.title}>Genbrugsstationer</h1>
 				<div className={style.recyclingstations}>
