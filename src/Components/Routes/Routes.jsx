@@ -3,13 +3,11 @@ import { Layout } from "../Layout/Layout.jsx";
 import { HomePage } from "../../Pages/HomePage.jsx";
 import { LoginPage } from "../../Pages/LoginPage.jsx";
 import { FallbackPage } from "../../Pages/FallbackPage.jsx";
-import { StationerPage } from "../../Pages/StationerPage.jsx";
 import { ArtikelPage } from "../../Pages/ArtikelPage.jsx";
 import { BestilPage } from "../../Pages/BestilPage.jsx";
 
 import { Login } from "../../Components/Customers/Login/Login.jsx";
 import { CreateUser } from "../Customers/Login/CreateUser.jsx";
-import { Sektioner } from "../Customers/Sorteringsguide/Sektioner.jsx";
 import { Kategorier } from "../Customers/Sorteringsguide/Kategorier.jsx";
 import { Genbrugsstationer } from "../Customers/Stationer/Genbrugsstationer.jsx";
 import { StationsDetails } from "../Customers/Stationer/StationsDetails.jsx";
@@ -60,18 +58,11 @@ export const routes = createBrowserRouter([
 			//nested router til genbrugsstationer
 			{
 				path: "/genbrugsstationer",
-				element: <StationerPage />,
-
-				children: [
-					{
-						index: true,
-						element: <Genbrugsstationer />,
-					},
-					{
-						path: "/genbrugsstationer/:id",
-						element: <StationsDetails />,
-					},
-				],
+				element: <Genbrugsstationer />,
+			},
+			{
+				path: "/genbrugsstationer/:id",
+				element: <StationsDetails />,
 			},
 
 			//nested router til artikler
