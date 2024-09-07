@@ -32,11 +32,20 @@
 	p {
 		margin: 32px 0 48px;
 	}
+	img {
+		width: 50%;
+	}
 }
 
 //mobil
 @media (max-width: 768px) {
-	.artikler {
+	.artikler,
+	.articleDetails {
 		margin: 0 16px;
+	}
+	.articleDetails {
+		img {
+			width: 100%;
+		}
 	}
 }

@@ -59,7 +59,7 @@ export const ResetPassword = ({
 								className={globalStyle.styledButton}
 								disabled={isLoading} // Disable knappen mens loaderen er aktiv
 							>
-								{isLoading ? "Sender..." : "Send nulstillingslink"}
+								{isLoading ? "Sender..." : "Send"}
 								{/* Skift knaptekst */}
 							</button>
 						</div>

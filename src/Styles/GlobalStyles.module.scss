@@ -132,6 +132,13 @@ link {
 	animation: backgroundSlide 2s forwards;
 }
 
+@media (max-width: 768px) {
+	.successMessage2 {
+		background: none;
+		color: $color-forrestGreen;
+		padding: 0;
+	}
+}
 //Standard knap styling til dette projekt.
 .styledButton {
 	height: 39px;
