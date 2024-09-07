@@ -1,4 +1,3 @@
-import { useLocation } from "react-router-dom";
 import { useArticlesData } from "../../Hooks/ArticlesData";
 import { useParams } from "react-router-dom";
 import { formatDate } from "../../Utils/DateUtils";
@@ -29,7 +28,7 @@ export const ArtikelDetails = () => {
 			{/* Bruger dangerouslySetInnerHTML til at fjerne alle tags*/}
 			<div dangerouslySetInnerHTML={{ __html: article.html_content }} />
 
-			{/* Inline styling for h2 og p tags */}
+			{/* Inline styling til h2 og p tags */}
 			<style jsx>{`
 				h2 {
 					margin-top: 20px;

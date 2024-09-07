@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useSupabase } from "../../../Providers/SupabaseProvider";
 import { Link } from "react-router-dom";
 import logo from "../../../Assets/Logo/logo.png";
 import { useAuth } from "../../../Providers/AuthProvider";
@@ -6,7 +6,6 @@ import { useAuth } from "../../../Providers/AuthProvider";
 import { IoMdLogIn } from "react-icons/io";
 import { IoMdLogOut } from "react-icons/io";
 import style from "./Header.module.scss";
-import { useSupabase } from "../../../Providers/SupabaseProvider";
 
 export const Header = () => {
 	const { supabase } = useSupabase();

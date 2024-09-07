@@ -16,7 +16,7 @@ export const Fallback = () => {
 				</p>
 				<div>
 					<button className={globalStyle.styledButton}>
-						Take me back to home page
+						Take me to home page
 					</button>
 				</div>
 			</div>

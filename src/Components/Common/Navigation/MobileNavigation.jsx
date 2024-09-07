@@ -7,6 +7,11 @@ import style from "./Navigation.module.scss";
 
 export const MobileNavigation = () => {
 	const [isOpen, setOpen] = useState(false);
+
+	const handleMenuClick = () => {
+		setOpen(false);
+	};
+
 	return (
 		<>
 			<div className={style.mobilNavWrapper}>
@@ -25,7 +30,10 @@ export const MobileNavigation = () => {
 							MenuData.map((menu) => {
 								return (
 									<li key={menu.id}>
-										<NavLink to={menu.url} className={style.navText}>
+										<NavLink
+											to={menu.url}
+											className={style.navText}
+											onClick={handleMenuClick}>
 											{menu.title}
 										</NavLink>
 									</li>

@@ -13,7 +13,7 @@
 		position: absolute;
 		width: 80%;
 		height: fit-content;
-		background-color: $color-natur;
+		background-color: #fff;
 		text-align: center;
 		padding: 25px;
 		bottom: 10px;
@@ -41,11 +41,11 @@
 			text-transform: capitalize;
 			font-family: "Open Sans", sans-serif;
 			text-align: center;
-			color: $color-lightGreen;
+			color: $color-forrestGreen;
 		}
 		p {
 			@include text;
-			color: $color-lightGreen;
+			color: $color-forrestGreen;
 			padding: 0 0 20px 0;
 		}
 		button {

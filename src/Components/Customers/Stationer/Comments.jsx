@@ -22,13 +22,8 @@ export const Comments = ({ sationsData }) => {
 	const [updatedCommentText, setUpdatedCommentText] = useState(""); // Ny kommentar tekst
 	const [selectedRating, setSelectedRating] = useState(0);
 	const [commentText, setCommentText] = useState("");
-	const {
-		errorMessage,
-		successMessage,
-		setErrorMessage,
-		setSuccessMessage,
-		clearMessages,
-	} = useClearMessageHandler();
+	const { setErrorMessage, setSuccessMessage, clearMessages } =
+		useClearMessageHandler();
 
 	console.log(sationsData);
 
@@ -189,8 +184,6 @@ export const Comments = ({ sationsData }) => {
 									{editingCommentId === comment.id ? (
 										<div className={style.editCommentWrapper}>
 											<textarea
-												// rows="4"
-												// cols="50"
 												value={updatedCommentText}
 												onChange={(e) => setUpdatedCommentText(e.target.value)}
 											/>

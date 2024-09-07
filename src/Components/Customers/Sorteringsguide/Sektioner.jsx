@@ -3,9 +3,16 @@ import { useTrachSections } from "../../Hooks/TrachSectionsData.jsx";
 
 import globalStyle from "./../../../Styles/GlobalStyles.module.scss";
 import style from "./Sortering.module.scss";
+import { useResizeHandler } from "../../Common/ResizeHandler/ResizeHandler.jsx";
 
 export const Sektioner = () => {
 	const trashSections = useTrachSections();
+	const windowSize = useResizeHandler();
+
+	// Bestem hvilken className der skal bruges baseret på vinduesbredden
+	const getClassName = () => {
+		return windowSize.width <= 768 ? globalStyle.text : globalStyle.subtitle2;
+	};
 
 	return (
 		<main className={style.sortering}>
@@ -31,7 +38,8 @@ export const Sektioner = () => {
 								<div
 									className={style.kategoriWrapper}
 									style={{ backgroundColor }}>
-									<h2 className={globalStyle.subtitle2}>{section.title}</h2>
+									{/* Dynamisk className baseret på skærmstørrelse */}
+									<h2 className={getClassName()}>{section.title}</h2>
 									<img src={section.image_url} alt={section.title} />
 								</div>
 							</Link>

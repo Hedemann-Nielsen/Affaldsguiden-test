@@ -13,7 +13,7 @@ export const useSationsData = () => {
 			try {
 				if (supabase) {
 					const { data, error } = await supabase
-						.from("recycling_sites") // henter fra tabellen trash_categories
+						.from("recycling_sites") // henter fra tabellen recycling_sites (stationer)
 						.select("*, reviews(*)") // henter alle kolonnen
 						.eq("id", id)
 						.single();

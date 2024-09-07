@@ -192,19 +192,6 @@ link {
 	height: 100%;
 }
 
-.innerWrapper {
-	padding: 0;
-
-	// background: linear-gradient(180deg, #06682d 0%, #fff 734px, #ffffff 734px);
-}
-
-/* PC*/
-@media (min-width: 992px) {
-	.InnerWrapper {
-		padding: 0 117px;
-	}
-}
-
 .modal {
 	position: absolute;
 	width: 80%;

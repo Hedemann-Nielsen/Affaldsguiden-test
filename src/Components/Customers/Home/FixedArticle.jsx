@@ -1,33 +1,36 @@
 import { FaArrowAltCircleRight } from "react-icons/fa";
-import globalStyle from "../../../Styles/GlobalStyles.module.scss";
-import style from "./Home.module.scss";
 import { Link } from "react-router-dom";
 
-export const FixedArticle = ({ article, imageAlt }) => {
-	if (!article) return null;
+import globalStyle from "../../../Styles/GlobalStyles.module.scss";
+import style from "./Home.module.scss";
+
+export const FixedArticle = ({ articleWithId2, imageAlt }) => {
+	if (!articleWithId2) return null;
 
 	return (
 		<div className={style.fixedartikleWrapper}>
 			<div className={style.contentWrapper}>
 				<div className={style.fixedNewsText}>
-					<section className={style.fixedarticleBox} key={article.id}>
+					<section
+						className={style.fixedarticleWithId2Box}
+						key={articleWithId2.id}>
 						<h2 className={`${globalStyle.subtitle2} ${style.header}`}>
-							{article.title.split("-")[0]}-
+							{articleWithId2.title.split("-")[0]}-
 							<span className={style.secondPartText}>
-								{article.title.split("-")[1]}
+								{articleWithId2.title.split("-")[1]}
 							</span>
 						</h2>
 						<p
 							className={`${globalStyle.text} ${style.teaserText}`}
 							dangerouslySetInnerHTML={{
-								__html: `${article.teaser}`,
+								__html: `${articleWithId2.teaser}`,
 							}}></p>
-						<Link to={`/artikler/${article.id}`}>
+						<Link to={`/artikler/${articleWithId2.id}`}>
 							<FaArrowAltCircleRight className={style.FaArrowAltCircleRight} />
 						</Link>
 					</section>
 				</div>
-				<img src={article.image_url} alt={imageAlt} />
+				<img src={articleWithId2.image_url} alt={imageAlt} />
 			</div>
 		</div>
 	);

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useArticlesTrueData } from "../../Hooks/ArticlesData";
+import { useArticlesTrueData } from "../../Hooks/ArticlesTrueData";
 
 import { RandomArticles } from "./RandomArticles";
 import { FixedArticle } from "./FixedArticle";
@@ -11,16 +11,19 @@ import { FaArrowAltCircleRight } from "react-icons/fa";
 import globalStyle from "../../../Styles/GlobalStyles.module.scss";
 import style from "./Home.module.scss";
 import { Link } from "react-router-dom";
+import { useArticlesData } from "../../Hooks/ArticlesData";
 
 export const Home = () => {
-	const articles = useArticlesTrueData();
+	const articlesTrue = useArticlesTrueData();
+	const articles = useArticlesData();
 	const [randomArticles, setRandomArticles] = useState([]);
 	const [articleWithId2, setArticleWithId2] = useState(null);
 	const [articleWithId4, setArticleWithId4] = useState(null);
 
 	useEffect(() => {
-		if (articles && articles.length > 1) {
-			const articlesCopy = [...articles];
+		//fin random artikler
+		if (articlesTrue && articlesTrue.length > 1) {
+			const articlesCopy = [...articlesTrue];
 
 			const getRandomArticle = () => {
 				const randomIndex = Math.floor(Math.random() * articlesCopy.length);
@@ -30,9 +33,11 @@ export const Home = () => {
 			const selectedArticles = [getRandomArticle(), getRandomArticle()];
 			setRandomArticles(selectedArticles);
 
+			//find artikel med id 2
 			const foundArticle2 = articles.find((article) => article.id === 2);
 			setArticleWithId2(foundArticle2);
 
+			//find artikel med id 4
 			const foundArticle4 = articles.find((article) => article.id === 4);
 			setArticleWithId4(foundArticle4);
 		}
@@ -44,15 +49,15 @@ export const Home = () => {
 				<div className={style.innerGradient}>
 					<img src={malerspande} alt="malerspande" />
 				</div>
-
-				<RandomArticles articles={randomArticles} />
+				<RandomArticles randomArticles={randomArticles} />
 			</main>
 
 			<main>
 				<FixedArticle
-					article={articleWithId2}
+					articleWithId2={articleWithId2}
 					imageAlt={articleWithId2?.title}
 				/>
+
 				<div className={style.fixedartikleButtomWrapper}>
 					<div className={style.fixedartikleButtomContainer}>
 						<img src={affaldssortering} alt="affalds sortering" />

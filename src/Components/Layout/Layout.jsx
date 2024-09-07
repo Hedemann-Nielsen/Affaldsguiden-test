@@ -2,11 +2,10 @@ import { Outlet, useLocation } from "react-router-dom";
 import { CookieBanner } from "../CookieBanner/CookieBanner.jsx";
 import { Footer } from "../Common/Footer/Footer.jsx";
 import { Header } from "../Common/Header/Header.jsx";
-// import { SupNavigation } from "../Common/SupNavigation/SupNavigation.jsx";
 import { MobileNavigation } from "../Common/Navigation/MobileNavigation.jsx";
 import { InnerWrapper } from "../Common/Wrappers/InnerWrapper.jsx";
 import { useResizeHandler } from "../Common/ResizeHandler/ResizeHandler.jsx";
-import Navigation from "../Common/Navigation/Navigation.jsx";
+import { Navigation } from "../Common/Navigation/Navigation.jsx";
 
 export const Layout = () => {
 	const { width } = useResizeHandler();

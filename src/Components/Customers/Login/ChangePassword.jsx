@@ -1,9 +1,9 @@
-import { useState } from "react";
 import { useClearMessageHandler } from "../../Utils/ClearMessages";
-import globalStyle from "../../../Styles/GlobalStyles.module.scss";
-import style from "./Login.module.scss";
 import { useForm } from "react-hook-form";
 import { useSupabase } from "../../../Providers/SupabaseProvider";
+
+import globalStyle from "../../../Styles/GlobalStyles.module.scss";
+import style from "./Login.module.scss";
 
 export const ChangePassword = () => {
 	const { supabase } = useSupabase();

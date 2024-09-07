@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom"; // Hent useParams til at få URL-p
 import { useSationsData } from "../../Hooks/SationsData";
 import { calculateAverageStars, renderStars } from "./StarReviews";
 import { Comments } from "./Comments";
-// import { CommentsCopy } from "./CommentsCopy";
 
 import { IoMdMail } from "react-icons/io";
 import { FaPhone } from "react-icons/fa6";
@@ -40,8 +39,7 @@ export const StationsDetails = () => {
 					</div>
 					<div className={style.starsBig}>{renderStars(averageStars)}</div>
 				</section>
-				<Comments sationsData={sationsData.id} />{" "}
-				{/* Send stationId til Comments */}
+				<Comments sationsData={sationsData.id} />
 			</div>
 		</PageWrapper>
 	);

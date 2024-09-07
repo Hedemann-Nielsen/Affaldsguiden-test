@@ -4,13 +4,13 @@ import globalStyle from "../../../Styles/GlobalStyles.module.scss";
 import style from "./Home.module.scss";
 import { Link } from "react-router-dom";
 
-export const RandomArticles = ({ articles }) => {
-	if (!articles || articles.length === 0) return null;
+export const RandomArticles = ({ randomArticles }) => {
+	if (!randomArticles || randomArticles.length === 0) return null;
 
 	return (
 		<div className={style.artikleWrapper}>
-			{articles &&
-				articles.map((article) => {
+			{randomArticles &&
+				randomArticles.map((article) => {
 					const [firstPart, secondPart] = article.title.split("-");
 					return (
 						<Link

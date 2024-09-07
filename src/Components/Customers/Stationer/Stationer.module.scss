@@ -3,14 +3,14 @@
 
 .stations {
 	margin: 0 122px;
-	padding: 64px 45px;
+	padding: 64px 33px;
 	background: linear-gradient(180deg, $color-lightGreen 0%, #ffffff 734px);
 
 	.recyclingstations {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-
-		gap: 96px 61px;
+		width: 100%;
+		gap: 30px;
 		.recyclingstation {
 			background-color: #ffffff;
 			width: 518px;
@@ -174,4 +174,13 @@
 }
 .emptyStar {
 	color: #d9d9d9;
+}
+
+//mobil
+@media (max-width: 768px) {
+	.stations,
+	.stationsDetails,
+	.commentsWrapper {
+		margin: 0 16px;
+	}
 }

@@ -2,7 +2,7 @@
 @use "../../../Styles//Helpers/Mixinx" as *;
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-.mobilNavWrapper {
+.NavWrapper {
 	border-bottom: 1px solid;
 	border-top: 1px solid;
 	border-color: $color-mossGreen;
@@ -24,16 +24,15 @@
 				list-style: none;
 				border-left: 1px solid;
 				border-color: $color-mossGreen;
-
-				a {
-					font-family: "Inter", sans-serif;
-					text-transform: uppercase;
-					color: black;
-					font-size: 16px;
-					line-height: 19.36px;
-					text-align: center;
-					text-decoration: none;
-				}
+			}
+			a {
+				font-family: "Inter", sans-serif;
+				text-transform: uppercase;
+				color: black;
+				font-size: 16px;
+				line-height: 19.36px;
+				text-align: center;
+				text-decoration: none;
 			}
 			&:hover {
 				background-color: $color-kaki;
@@ -56,12 +55,13 @@
 
 .navMobilMenu {
 	background-color: #fff;
-	width: 100%;
+
+	width: fit-content;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	position: fixed;
-	top: 250px;
+	top: 100px;
 	right: -100%;
 	z-index: 1000;
 	transition: 850ms;
@@ -70,17 +70,16 @@
 		list-style: none;
 		li {
 			display: flex;
-			justify-content: center;
 
 			a {
-				@include text;
+				font-size: 12px;
 				margin: 2px 0;
 				text-decoration: none;
 				text-transform: uppercase;
 				font-weight: 600;
-				width: 200px;
-				text-align: center;
-				padding: 5px 0;
+				padding: 5px 10px;
+				font-family: "Open Sans", sans-serif;
+				color: $color-deepGreen;
 			}
 		}
 		a:hover {

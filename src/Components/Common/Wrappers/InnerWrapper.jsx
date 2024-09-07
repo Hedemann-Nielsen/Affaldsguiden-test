@@ -2,6 +2,8 @@ import { useLocation } from "react-router-dom";
 import globalStyle from "../../../Styles/GlobalStyles.module.scss";
 import { useTrachSections } from "../../Hooks/TrachSectionsData.jsx";
 
+//innerWrapper bruges til at lave margin og farve baggrunden
+
 export const InnerWrapper = ({ children }) => {
 	const trachSectionsData = useTrachSections();
 	const location = useLocation();
@@ -30,8 +32,8 @@ export const InnerWrapper = ({ children }) => {
 	}
 
 	return (
-		<section className={globalStyle.innerWrapper} style={{ background }}>
-			<div className={globalStyle.contentWrapper}>{children}</div>
+		<section style={{ background }}>
+			<div>{children}</div>
 		</section>
 	);
 };

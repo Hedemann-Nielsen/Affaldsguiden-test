@@ -16,7 +16,6 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			width: 518px;
 			height: 181px;
 			border-radius: 8px;
 
@@ -34,16 +33,20 @@
 
 @media (max-width: 768px) {
 	.sortering {
-		margin: 0 20px;
-	}
-	figure {
-		grid-template-columns: 1fr;
-		gap: 20px;
+		margin: 0 16px;
+		figure {
+			grid-template-columns: 1fr;
+			gap: 20px;
 
-		width: 100%;
-		.kategoriWrapper {
-			display: block;
 			width: 100%;
+			.kategoriWrapper {
+				// display: block;
+				width: 50%;
+
+				h2 {
+					padding: 30px;
+				}
+			}
 		}
 	}
 }
@@ -145,9 +148,6 @@
 
 @media (max-width: 768px) {
 	.KategorierWrapper {
-		margin: 0 20px;
-		.subtitle {
-			margin: 20px 0;
-		}
+		margin: 0 16px;
 	}
 }

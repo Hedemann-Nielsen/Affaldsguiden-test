@@ -11,7 +11,7 @@ import style from "./Login.module.scss";
 
 export const NotLogedin = () => {
 	const { supabase } = useSupabase();
-	const { loginData, setLoginData } = useAuth();
+	const { setLoginData } = useAuth();
 	const location = useLocation();
 	const [errorMessage, setErrorMessage] = useState("");
 	const [isModalOpen, setIsModalOpen] = useState(false);

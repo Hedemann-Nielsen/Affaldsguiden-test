@@ -46,6 +46,7 @@
 }
 
 //midter sektion
+
 .fixedartikleWrapper {
 	padding-left: 117px;
 	background-color: $color-lightGreen;
@@ -71,7 +72,6 @@
 	position: relative;
 	margin: 96px;
 	box-shadow: 0px 10px 20px 0px #00000040;
-
 	.fixedartikleButtomContainer {
 		display: flex;
 
@@ -84,7 +84,7 @@
 		}
 		.fixedarticleButtomBox {
 			margin: 72px 36px 173px 36px;
-			width: 549px;
+			width: 80%;
 			.tipsogTricksWrapper {
 				position: absolute;
 				bottom: 45px;
@@ -95,12 +95,6 @@
 			}
 		}
 	}
-	// 	width: 1100px;
-	// 	z-index: 10;
-	// 	margin-top: -750px;
-	// 	display: flex;
-	// 	box-shadow: 0px 10px 20px 0px #00000040;
-	// 	background-color: #fff;
 }
 
 .header,
@@ -127,6 +121,8 @@
 //mobil
 @media (max-width: 768px) {
 	.home {
+		margin: 0 16px;
+
 		padding-bottom: 300px;
 		.innerGradient {
 			img {
@@ -139,63 +135,70 @@
 
 			.articleBox {
 				width: 90%;
+				height: fit-content;
 				margin: auto;
 			}
 		}
+	}
+	//midter sektion
+	.fixedartikleWrapper {
+		display: block;
+		width: 100%;
 
-		//midter sektion
-		.fixedartikleWrapper {
-			display: block;
-			width: 100%;
-
-			padding: 0;
-			.contentWrapper {
-				display: flex;
-				flex-direction: column;
-				margin: 0;
-				.fixedNewsText {
-					padding: 0 20px;
-				}
+		padding: 0;
+		.contentWrapper {
+			// display: flex;
+			// flex-direction: column;
+			grid-template-columns: 1fr;
+			margin: 0;
+			.fixedNewsText {
+				padding: 0 20px;
 			}
-
-			.fixedarticleBox {
-				left: 0;
-			}
-		}
-
-		//nederste sektion
-		.fixedartikleButtomWrapper {
-			width: 90%;
-			margin-top: -400px;
-
-			flex-direction: column-reverse;
 			img {
-				height: 600px;
-				margin-top: 30px;
+				// position: relative;
+				width: 100%;
 			}
-			div {
-				.fixedarticleButtomBox {
-					margin: 0;
+		}
+
+		.fixedarticleBox {
+			left: 0;
+		}
+	}
+
+	//nederste sektion
+	.fixedartikleButtomWrapper {
+		margin: 12px;
+
+		.fixedartikleButtomContainer {
+			flex-direction: column-reverse;
+		}
+		img {
+			height: 600px;
+			margin-top: 30px;
+		}
+		div {
+			.fixedarticleButtomBox {
+				margin: 0;
+
+				width: 100%;
+				h2 {
+					text-align: center;
+					padding: 30px 20px;
+				}
+				.tipsogTricksWrapper {
+					padding: 10px;
+					display: flex;
+					bottom: 50px;
+					position: inherit;
+					background-color: #fff;
 					width: 100%;
-					h2 {
-						text-align: center;
-						padding: 30px 20px;
-					}
-					.tipsogTricksWrapper {
-						position: inherit;
-						text-align: center;
-						background-color: #ffffff;
-						width: 100%;
-						margin-top: 200px;
-						// margin-bottom: 100px;
-					}
 				}
 			}
 		}
-		.FaArrowAltCircleRightWrapper,
-		.fixedartikleWrapper,
-		.fixedarticleBox {
-			position: inherit;
-		}
+	}
+	.FaArrowAltCircleRightWrapper,
+	.fixedartikleWrapper,
+	.fixedarticleBox {
+		position: inherit;
 	}
 }
