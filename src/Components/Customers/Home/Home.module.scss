@@ -55,14 +55,13 @@
 		display: grid;
 		grid-template-columns: 2fr 1fr;
 		gap: 56px;
-	}
-	.fixedNewsText {
-		margin-top: 36px;
-	}
-
-	img {
-		width: auto;
-		height: 334px;
+		img {
+			width: auto;
+			height: 334px;
+		}
+		.fixedNewsText {
+			margin-top: 36px;
+		}
 	}
 }
 

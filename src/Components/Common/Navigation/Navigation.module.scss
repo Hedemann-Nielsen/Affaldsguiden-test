@@ -35,8 +35,16 @@
 				text-decoration: none;
 			}
 			&:hover {
-				background-color: $color-kaki;
+				background: linear-gradient(
+					90deg,
+					$color-kaki,
+					$color-kaki 50%,
+					transparent 50%
+				);
+				background-size: 200% 100%;
+				animation: backgroundSlide 2s forwards;
 			}
+
 			&:nth-child(6) {
 				border-right: 1px solid;
 				border-color: $color-mossGreen;
@@ -73,7 +81,7 @@
 
 			a {
 				font-size: 12px;
-				margin: 2px 0;
+				margin: 2px 5px;
 				text-decoration: none;
 				text-transform: uppercase;
 				font-weight: 600;
@@ -83,12 +91,28 @@
 			}
 		}
 		a:hover {
-			background-color: $color-lightGreen;
+			background: linear-gradient(
+				90deg,
+				$color-kaki,
+				$color-kaki 50%,
+				transparent 50%
+			);
+			background-size: 200% 100%;
+			animation: backgroundSlide 2s forwards;
 			border-radius: 8px;
 		}
 	}
 	&.activeMobil {
 		display: block;
 		right: 0;
+	}
+}
+
+@keyframes backgroundSlide {
+	0% {
+		background-position: 100% 0;
+	}
+	100% {
+		background-position: 0 0;
 	}
 }

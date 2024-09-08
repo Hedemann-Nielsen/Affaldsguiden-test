@@ -1,5 +1,4 @@
 import { PageWrapper } from "../../Common/Wrappers/PageWrapper";
-import { useParams } from "react-router-dom"; // Hent useParams til at få URL-parametre
 import { useSationsData } from "../../Hooks/SationsData";
 import { calculateAverageStars, renderStars } from "./StarReviews";
 import { Comments } from "./Comments";
@@ -10,13 +9,12 @@ import { FaPhone } from "react-icons/fa6";
 import style from "./Stationer.module.scss";
 
 export const StationsDetails = () => {
-	const { stationId } = useParams(); // Hent stationId fra URL'en
 	const sationsData = useSationsData();
 	const averageStars = calculateAverageStars(sationsData.reviews);
 	// console.log(sationsData);
 
 	return (
-		<PageWrapper>
+		<PageWrapper title={`station - ${sationsData.name}`}>
 			<div className={style.stationsDetails}>
 				<iframe
 					src={`https://www.google.com/maps?q=${sationsData.longitude},${sationsData.latitude}&z=14&output=embed`}></iframe>

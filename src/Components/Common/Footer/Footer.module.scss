@@ -6,8 +6,11 @@
 	transform: translate(-50%, -50%);
 	display: flex;
 	justify-content: space-around;
-	img {
-		margin-left: 16px;
+	div {
+		img {
+			width: 150px;
+			margin-left: 16px;
+		}
 	}
 	.socialIcons {
 		font-size: 48px;

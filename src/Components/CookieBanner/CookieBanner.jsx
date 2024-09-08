@@ -7,21 +7,23 @@ import globalStyle from "../..//Styles/GlobalStyles.module.scss";
 export const CookieBanner = () => {
 	const [showBanner, setShowBanner] = useState(false);
 
-	useEffect(() => {
-		if (!localStorage.getItem("cookies")) {
-			setShowBanner(true);
-		}
-	}, []);
-
 	const cookieOK = () => {
-		localStorage.setItem("cookies", true);
+		localStorage.setItem("cookies", JSON.stringify(true));
 		setShowBanner(false);
 	};
 
 	const cookieDeny = () => {
-		localStorage.setItem("cookies", false);
+		localStorage.setItem("cookies", JSON.stringify(false));
 		setShowBanner(false);
 	};
+
+	useEffect(() => {
+		//tager strængen fra localStorage og gemmer den som et JS object i en konstant variabel cookieConsent
+		const cookieConsent = JSON.parse(localStorage.getItem("cookies"));
+		if (cookieConsent !== true && cookieConsent !== false) {
+			setShowBanner(true);
+		}
+	}, []);
 
 	return (
 		<>

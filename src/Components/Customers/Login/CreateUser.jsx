@@ -19,7 +19,7 @@ export const CreateUser = () => {
 	} = useForm();
 
 	//tjekker om password og confirmPassword er det samme, hvis de er ens kan opret bruger køre
-	const onSubmit = (data) => {
+	const onSubmit = (data, error) => {
 		const { password, confirmPassword, email } = data;
 		if (password !== confirmPassword) {
 			console.error("Passwords matcher ikke");
@@ -41,7 +41,7 @@ export const CreateUser = () => {
 				setErrorMessage("Der opstod en fejl: " + error.message);
 				console.error("Kunne ikke oprette bruger:", error);
 			} else {
-				console.log("Bruger oprettet:", data);
+				// console.log("Bruger oprettet:", data);
 				sessionStorage.setItem("supabase.auth.token", JSON.stringify(data));
 				navigate("/login", {
 					state: {

@@ -25,7 +25,7 @@ export const Comments = ({ sationsData }) => {
 	const { setErrorMessage, setSuccessMessage, clearMessages } =
 		useClearMessageHandler();
 
-	console.log(sationsData);
+	// console.log(sationsData);
 
 	const handleRatingSelect = (rating) => {
 		setSelectedRating(rating); // Gem den valgte vurdering

@@ -6,6 +6,11 @@
 	justify-content: space-between;
 	align-items: center;
 	margin: 15px 122px;
+	a {
+		img {
+			width: 100%;
+		}
+	}
 	.loginButton {
 		padding: 6px 12px;
 		border-radius: 8px;

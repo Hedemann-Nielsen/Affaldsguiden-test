@@ -4,7 +4,7 @@ import { useArticlesTrueData } from "../../Hooks/ArticlesTrueData";
 import { RandomArticles } from "./RandomArticles";
 import { FixedArticle } from "./FixedArticle";
 
-import malerspande from "../../../Assets/Images/malerSpande.jpg";
+import malerspande from "../../../Assets/Images/malerSpande.webp";
 import affaldssortering from "../../../Assets/Images/affaldssortering.jpg";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 

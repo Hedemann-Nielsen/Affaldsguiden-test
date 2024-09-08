@@ -3,9 +3,9 @@ import globalStyle from "../../Styles/GlobalStyles.module.scss";
 
 export const Loader = () => {
 	return (
-		<sektion>
+		<section>
 			<p className={`${globalStyle.subtitle2} ${style.text}`}>Loader</p>
 			<div className={style.loader}></div>
-		</sektion>
+		</section>
 	);
 };

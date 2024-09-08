@@ -1,3 +1,4 @@
+import { PageWrapper } from "../../Common/Wrappers/PageWrapper.jsx";
 import { Link } from "react-router-dom";
 import { useArticlesData } from "../../Hooks/ArticlesData";
 import { formatDate } from "../../Utils/DateUtils.jsx";
@@ -10,7 +11,7 @@ export const Artikler = () => {
 	// console.log(articlesData);
 
 	return (
-		<>
+		<PageWrapper title={"Artikler"}>
 			<div className={style.artikler}>
 				<h1 className={globalStyle.title}>Artikler</h1>
 				<div className={style.articleWrapper}>
@@ -37,6 +38,6 @@ export const Artikler = () => {
 						})}
 				</div>
 			</div>
-		</>
+		</PageWrapper>
 	);
 };

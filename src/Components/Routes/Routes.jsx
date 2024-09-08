@@ -3,8 +3,8 @@ import { Layout } from "../Layout/Layout.jsx";
 import { HomePage } from "../../Pages/HomePage.jsx";
 import { LoginPage } from "../../Pages/LoginPage.jsx";
 import { FallbackPage } from "../../Pages/FallbackPage.jsx";
-import { ArtikelPage } from "../../Pages/ArtikelPage.jsx";
 import { BestilPage } from "../../Pages/BestilPage.jsx";
+import { SektionerPage } from "../../Pages/SektionerPage.jsx";
 
 import { Login } from "../../Components/Customers/Login/Login.jsx";
 import { CreateUser } from "../Customers/Login/CreateUser.jsx";
@@ -13,7 +13,6 @@ import { Genbrugsstationer } from "../Customers/Stationer/Genbrugsstationer.jsx"
 import { StationsDetails } from "../Customers/Stationer/StationsDetails.jsx";
 import { Artikler } from "../Customers/Artikler/Artikler.jsx";
 import { ArtikelDetails } from "../Customers/Artikler/ArtikelDetails.jsx";
-import { SektionerPage } from "../../Pages/SektionerPage.jsx";
 
 export const routes = createBrowserRouter([
 	{

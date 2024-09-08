@@ -35,7 +35,7 @@ export const ResetPassword = ({
 
 	return (
 		<>
-			<sektion>
+			<section>
 				<div className={style.modalForm}>
 					<h2>Nulstil Adgangskode</h2>
 					<form onSubmit={handleResetPassword}>
@@ -84,7 +84,7 @@ export const ResetPassword = ({
 						</button>
 					</div>
 				</div>
-			</sektion>
+			</section>
 		</>
 	);
 };

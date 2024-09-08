@@ -4,7 +4,7 @@ import { Home } from "../Components/Customers/Home/Home";
 export const HomePage = () => {
 	return (
 		<>
-			<PageWrapper title={"Home"}>
+			<PageWrapper title={"Affaldsguiden"}>
 				<Home />
 			</PageWrapper>
 		</>
