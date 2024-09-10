@@ -33,7 +33,9 @@ export const Sektioner = () => {
 								to={`/sektioner/kategori/${section.id}`}
 								className={globalStyle.link}
 								key={section.id}
-								state={{ title: section.title }} // Send title videre via state
+								state={{
+									title: section.title,
+								}} // Send title videre via state
 							>
 								<div
 									className={style.kategoriWrapper}

@@ -18,7 +18,7 @@ export const useTrachSections = () => {
 							error.message
 						);
 					} else {
-						// console.log(data);
+						console.log(data);
 						setTrachSectionsData(data);
 					}
 				}

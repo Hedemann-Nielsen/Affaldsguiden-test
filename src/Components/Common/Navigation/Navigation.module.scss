@@ -78,28 +78,53 @@
 		list-style: none;
 		li {
 			display: flex;
-
-			a {
+			.navText {
+				position: relative;
+				display: inline-block;
 				font-size: 12px;
 				margin: 2px 5px;
 				text-decoration: none;
 				text-transform: uppercase;
 				font-weight: 600;
-				padding: 5px 10px;
+				padding: 5px 0;
 				font-family: "Open Sans", sans-serif;
 				color: $color-deepGreen;
 			}
-		}
-		a:hover {
-			background: linear-gradient(
-				90deg,
-				$color-kaki,
-				$color-kaki 50%,
-				transparent 50%
-			);
-			background-size: 200% 100%;
-			animation: backgroundSlide 2s forwards;
-			border-radius: 8px;
+
+			/* styler linjen som kommerfrem nåt musen holdes over et menupunkt */
+			.navText::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 3px;
+				background-color: black;
+				border-radius: 4px;
+				scale: 0 1;
+				transform-origin: right;
+				transition: scale 0.5s;
+			}
+
+			.navText:hover::before {
+				scale: 1;
+				transform-origin: left;
+			}
+
+			// 	a {
+			//
+			// 	}
+			// }
+			// a:hover {
+			// 	background: linear-gradient(
+			// 		90deg,
+			// 		$color-kaki,
+			// 		$color-kaki 50%,
+			// 		transparent 50%
+			// 	);
+			// 	background-size: 200% 100%;
+			// 	animation: backgroundSlide 2s forwards;
+			// 	border-radius: 8px;
 		}
 	}
 	&.activeMobil {

@@ -33,13 +33,13 @@ export const Comments = ({ sationsData }) => {
 
 	const handleSubmitReview = async () => {
 		try {
-			console.log("Submitting review with data:", {
-				site_id: sationsData,
-				user_id: loginData.user.id,
-				is_active: true,
-				num_stars: selectedRating,
-				comment: commentText,
-			});
+			// console.log("Submitting review with data:", {
+			// 	site_id: sationsData,
+			// 	user_id: loginData.user.id,
+			// 	is_active: true,
+			// 	num_stars: selectedRating,
+			// 	comment: commentText,
+			// });
 
 			const { error, data } = await supabase.from("reviews").insert({
 				site_id: sationsData,

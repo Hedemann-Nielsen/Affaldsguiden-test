@@ -31,6 +31,7 @@ export const Kategorier = () => {
 	return (
 		<>
 			<div className={style.KategorierWrapper}>
+				hej hej hej
 				<PageWrapper title={sectionTitle}>
 					<h1 className={globalStyle.title}>{sectionTitle}</h1>
 					<h2 className={` ${style.subtitle}  ${globalStyle.subtitle2}`}>
