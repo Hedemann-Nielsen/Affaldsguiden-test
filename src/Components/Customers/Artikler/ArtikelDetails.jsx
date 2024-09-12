@@ -43,7 +43,6 @@ export const ArtikelDetails = () => {
 						font-family: Open Sans;
 						font-size: 16px;
 						font-weight: 400;
-						line-height: 21.79px;
 						text-align: left;
 					}
 				`}</style>
