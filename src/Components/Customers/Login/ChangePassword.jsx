@@ -44,7 +44,6 @@ export const ChangePassword = () => {
 
 				setSuccessMessage("Password er ændret");
 				clearMessages();
-				console.log("Password changed successfully for user:", user);
 			}
 			// Hvis der opstår en fejl i try-blokken, vises en fejlbesked og fejlen logges i konsollen		} catch (error) {
 		} catch (error) {

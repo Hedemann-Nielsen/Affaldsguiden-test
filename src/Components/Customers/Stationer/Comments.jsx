@@ -25,23 +25,13 @@ export const Comments = ({ sationsData }) => {
 	const { setErrorMessage, setSuccessMessage, clearMessages } =
 		useClearMessageHandler();
 
-	// console.log(sationsData);
-
 	const handleRatingSelect = (rating) => {
 		setSelectedRating(rating); // Gem den valgte vurdering
 	};
 
 	const handleSubmitReview = async () => {
 		try {
-			// console.log("Submitting review with data:", {
-			// 	site_id: sationsData,
-			// 	user_id: loginData.user.id,
-			// 	is_active: true,
-			// 	num_stars: selectedRating,
-			// 	comment: commentText,
-			// });
-
-			const { error, data } = await supabase.from("reviews").insert({
+			const { error } = await supabase.from("reviews").insert({
 				site_id: sationsData,
 				user_id: loginData.user.id,
 				is_active: true,
@@ -54,7 +44,6 @@ export const Comments = ({ sationsData }) => {
 			} else {
 				setSuccessMessage("Kommentar blev tilføjet");
 				clearMessages();
-				console.log("Kommentar blev sendt", data);
 			}
 		} catch (error) {
 			setErrorMessage("Fejl ved oprettelse af anmeldelse");

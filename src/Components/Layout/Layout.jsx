@@ -9,7 +9,6 @@ import { Navigation } from "../Common/Navigation/Navigation.jsx";
 
 export const Layout = () => {
 	const { width } = useResizeHandler();
-	// console.log(width);
 
 	return (
 		<>

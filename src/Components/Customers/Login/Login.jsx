@@ -13,8 +13,6 @@ export const Login = () => {
 	const { supabase } = useSupabase();
 	const { loginData, setLoginData } = useAuth();
 
-	// console.log(loginData);
-
 	// Funktion som håndtere log ud ved hjælp af supabase
 	const handleLogout = async () => {
 		try {

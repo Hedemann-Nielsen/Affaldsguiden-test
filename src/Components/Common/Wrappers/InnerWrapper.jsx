@@ -18,8 +18,6 @@ export const InnerWrapper = ({ children }) => {
 		}
 	}, [id]);
 
-	console.log(currentSection, "current section");
-
 	return (
 		<InnerWrapperStyle $bgcolor={currentSection && currentSection.color}>
 			{children}

@@ -11,7 +11,6 @@ import style from "./Stationer.module.scss";
 export const StationsDetails = () => {
 	const sationsData = useSationsData();
 	const averageStars = calculateAverageStars(sationsData.reviews);
-	// console.log(sationsData);
 
 	return (
 		<PageWrapper title={`station - ${sationsData.name}`}>

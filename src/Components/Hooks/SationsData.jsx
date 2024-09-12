@@ -24,7 +24,6 @@ export const useSationsData = () => {
 							error.message
 						);
 					} else {
-						// console.log(data);
 						setSationsData(data);
 					}
 				}

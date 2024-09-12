@@ -8,7 +8,6 @@ import style from "./Artikler.module.scss";
 
 export const Artikler = () => {
 	const articlesData = useArticlesData();
-	// console.log(articlesData);
 
 	return (
 		<PageWrapper title={"Artikler"}>

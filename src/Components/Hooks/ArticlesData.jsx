@@ -18,7 +18,6 @@ export const useArticlesData = () => {
 							error.message
 						);
 					} else {
-						// console.log(data);
 						setArticlesData(data);
 					}
 				}

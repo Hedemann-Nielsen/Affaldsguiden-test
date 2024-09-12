@@ -93,7 +93,6 @@ ${data.zipcode} ${data.city}`);
 	// Håndterer valg af container
 	const handleContainerSelect = (containerId) => {
 		setSelectedContainer(containerId); // Opdaterer state med valgt container-ID
-		console.log(containerId, "Selected container");
 	};
 
 	return (

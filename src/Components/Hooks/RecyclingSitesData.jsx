@@ -18,7 +18,6 @@ export const useRecyclingSitesData = () => {
 							error.message
 						);
 					} else {
-						// console.log(data);
 						setRecyclingSitesData(data);
 					}
 				}

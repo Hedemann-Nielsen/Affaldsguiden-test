@@ -18,7 +18,6 @@ export const useContainersData = () => {
 							error.message
 						);
 					} else {
-						// console.log(data);
 						setContainersData(data);
 					}
 				}

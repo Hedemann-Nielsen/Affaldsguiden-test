@@ -20,7 +20,6 @@ export const useArticlesTrueData = () => {
 							error.message
 						);
 					} else {
-						// console.log(data);
 						setArticlesData(data);
 					}
 				}

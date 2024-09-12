@@ -41,7 +41,6 @@ export const CreateUser = () => {
 				setErrorMessage("Der opstod en fejl: " + error.message);
 				console.error("Kunne ikke oprette bruger:", error);
 			} else {
-				// console.log("Bruger oprettet:", data);
 				sessionStorage.setItem("supabase.auth.token", JSON.stringify(data));
 				navigate("/login", {
 					state: {

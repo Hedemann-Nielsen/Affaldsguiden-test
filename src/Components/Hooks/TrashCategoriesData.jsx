@@ -25,7 +25,6 @@ export const useTrashCategoriesData = () => {
 							error.message
 						);
 					} else {
-						// console.log(data);
 						setTrashCategoriesData(data);
 					}
 				}
