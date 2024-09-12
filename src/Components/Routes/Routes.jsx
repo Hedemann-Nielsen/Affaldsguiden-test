@@ -34,6 +34,8 @@ export const routes = createBrowserRouter([
 			},
 			{
 				path: "/sektioner/kategori/:id",
+				// korrekt måde at bruge det, hentes ud med useParams som section_id
+				// path: "/sektioner/kategori/:section_id",
 				element: <Kategorier />,
 			},
 
