@@ -72,7 +72,13 @@ export const Bestil = () => {
 				// Nulstil formen efter succesfuld indsendelse
 				reset();
 				// sender en alert boks til brugeren om at meddelelsen er sendt.
-				alert("Bestillingen er sendt!");
+				const container = containers.find((c) => c.id === selectedContainer);
+				alert(`Bestillingen er sendt! 
+Du har bestilt denne type container: ${container?.name}
+Den bliver leveret på følgende adresse:
+${data.fullname} 
+${data.address}
+${data.zipcode} ${data.city}`);
 				setSelectedContainer(null);
 			} else {
 				setMessage(response.message);
@@ -87,6 +93,7 @@ export const Bestil = () => {
 	// Håndterer valg af container
 	const handleContainerSelect = (containerId) => {
 		setSelectedContainer(containerId); // Opdaterer state med valgt container-ID
+		console.log(containerId, "Selected container");
 	};
 
 	return (
